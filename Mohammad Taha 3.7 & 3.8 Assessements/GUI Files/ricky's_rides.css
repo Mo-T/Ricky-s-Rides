@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #0C1922;
+	height: 170px;
+	padding: 30px;
+}
+
+.header_title {
+	color: #FFFFFF;
+	text-align: left;
+	font-size: 300%;
+	padding: 30px;
+}
+
+.header_logo {
+	float: right;
+	display: inline-block;
+	height: 160%;
+	margin-top: -4.5%;
+	width: 20%;
+	cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 20px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.carCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  cursor: pointer;
+  height: auto;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.carCard img {
+	width: 100%;
+}
+
+/*----confirm overlay style----*/
+
+#confirmOverlay {
+	/* style on confirm overlay */
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0C1922;
+	opacity: 0.95;
+	transition: 0.2s;
+	width: 100vw;
+	height: 0;
+	/* height adjusted to expand overlay */
+}
+#confirmOverlay p {
+	/* style on text portion of confirm overlay */
+	line-height: 80vh;
+	font-family: 'Raleway', sans-serif;
+	font-size: 5vw;
+	opacity: 1.0;
+	color: #FFFFFF;
+}
+#confirmOverlay a {
+	/* style on cross to close confirm overlay */
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 45px;
+	font-size: 90px;
+}
+#confirmOverlay a:hover {
+	color: #cccccc;
+}
+
+.footer {
+	padding: 20px 0;
+	line-height: 1.6;
+	background-color: #0C1922;
+	font-family: 'Raleway', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+/*Controls the horizontal line on the footer and its colour and shape*/
+
+.footer_hr {
+	width: 100%;
+	background: #FFFFFF;
+	height: 2px;
+	border: none;
+}
+/*Style for the copyright statement in the footer */
+
+.footer__p {
+	color: #FFFFFF;
+	padding: 3px 15px;
+	display: block;
+	text-align: left;
+	vertical-align: middle;
+}
+.footer__img {
+	display: block;
+	float: right;
+	width: 11%;
+	cursor: pointer;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
