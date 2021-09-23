@@ -87,7 +87,7 @@ header {
 	/* style on text portion of confirm overlay */
 	line-height: 80vh;
 	font-family: 'Raleway', sans-serif;
-	font-size: 5vw;
+	font-size: 3.2vw;
 	opacity: 1.0;
 	color: #FFFFFF;
 }
@@ -103,6 +103,11 @@ header {
 }
 #confirmOverlay a:hover {
 	color: #cccccc;
+}
+
+:invalid {
+	background-color: #ff0000;
+	opacity: 0.7;
 }
 
 .footer {
