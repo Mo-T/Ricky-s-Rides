@@ -1,0 +1,525 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body, html {
+	display: block;
+	margin: 0;
+	padding: 0;
+/*	background-image: url("https://allfreedesigns.com/wp-content/uploads/2015/06/black-patterns-4.jpg");*/
+}
+
+.main_content {
+	width: 80%;	
+	margin: auto;
+}
+
+.main_content_2 {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	width: 60%;
+	margin: auto;
+}
+
+nav {
+	background-color: #C0C0C0;
+	height: 100px;
+}
+
+.nav_logo {
+	float: left;
+	margin-left: 1%;
+	margin-top: 2px;
+	width: 470px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+/*Controls the placement, scroll effect and view of the parallax image under the navbar*/
+
+.parallax_effect {
+	position: relative;
+	z-index: 1000;
+	width: 100%;
+	height: 420px;
+	background-color: rgb(50, 50, 50);
+	background: url("https://www.teahub.io/photos/full/193-1934905_car-nature-driving.jpg") no-repeat 50% 50% fixed;
+	box-shadow: rgba(50, 50, 93, 0.5) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
+	background-size: cover;
+	overflow: hidden;
+	cursor: pointer;
+	background-attachment: fixed;
+}
+
+/*----confirm overlay style----*/
+
+#confirmOverlay {
+	/* style on confirm overlay */
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0C1922;
+	opacity: 0.95;
+	transition: 0.2s;
+	width: 100vw;
+	height: 0;
+	/* height adjusted to expand overlay */
+}
+#confirmOverlay p {
+	/* style on text portion of confirm overlay */
+	line-height: 80vh;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.2vw;
+	opacity: 1.0;
+	color: #FFFFFF;
+}
+#confirmOverlay a {
+	/* style on cross to close confirm overlay */
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 45px;
+	font-size: 90px;
+}
+#confirmOverlay a:hover {
+	color: #cccccc;
+}
+
+input:invalid, #driversLicenseInput:invalid {
+	border: 2px solid #ff0000;
+}
+
+/*Style for inline validation error messages*/
+.errorMessages {
+	text-align: right;
+	color: red;
+	margin-right: 50px;
+	font-size: 18px;
+	float: right;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+
+.addCheck[selected] {
+	backgroud-color: green;
+}
+
+/* Design for car cards */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #FF7000;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  transition: 0.3s ease-in-out;
+  
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease-in-out;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  border-radius: 6px;
+  border: 2px solid #FF7000;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.4);
+  transition: 0.3s ease-in-out;
+}
+
+.card:checked {
+	box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.8);
+	background-color: red;
+}
+
+.btn:focus {
+	background-color: #FF7000;
+	box-shadow: 2px 6px 12px 2px rgba(0,0,0,0.3);
+	font-weight: 700;
+}
+
+/*
+.addCheck[selected] {
+	background-color: red;
+} 
+*/
+
+.card_image {
+	width: 300px;
+	max-width: 100%;
+	height: 215px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin: auto;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  background-color: #FF7000;
+  text-align: center;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;   
+  font-family: 'Lato', sans-serif; 
+  text-align: center;
+}
+
+table {
+	margin: auto;
+	width: 80%;
+}
+
+
+/*--- EXTRAS CARDS STYLE ---*/
+
+.extras_container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.extras_container .option_item {
+  display: block;
+  position: relative;
+  width: 175px;
+  height: 175px;
+  margin: 10px;
+}
+
+.extras_container .option_item .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.option_item .option_inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 58px 40px;
+  cursor: pointer;
+  color: #585c68;
+  display: block;
+	margin: auto;
+  border: 5px solid transparent;
+  position: relative;
+}
+
+.option_item .option_inner .icon {
+  margin-bottom: 10px;
+}
+
+.option_item .option_inner .icon .fa {
+  font-size: 30px;
+}
+
+.option_item .option_inner .name {
+  user-select: none;
+  font-size: 14px;
+}
+
+.option_item .checkbox:checked ~ .option_inner.extras {
+  border-color: #FF7000;
+  color: #FF7000;
+}
+
+.option_item .option_inner .tickmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 22px solid;
+  border-color: #000 transparent transparent #000;
+  display: none;
+}
+
+.option_item .option_inner .tickmark:before {
+  content: "✔";
+  position: absolute;
+  top: -18px;
+  left: -20px;
+  width: 15px;
+  height: 5px;
+  border: 3px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+}
+
+.option_item .checkbox:checked ~ .option_inner .tickmark {
+  display: block;
+}
+
+.option_item .option_inner.extras .tickmark {
+  border-color: #FF7000 transparent transparent #FF7000;
+}
+/*--- END OF EXTRAS CARD STYLE ---*/
+
+
+/*Controls the style and the dimensions of the input fields*/
+[type='text'], select, [type='email'], [type="tel"], [type='date'], [type='number'], #driversLicenseInput {
+	padding: 0.5rem;
+	background: transparent;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 100%;
+	border-bottom-right-radius: 50px;
+	border-top-right-radius: 50px;
+	font-size: 0.95rem;
+}
+
+/*Controls style and dimensions of the textarea input field*/
+textarea {
+	padding: 0.5rem;
+	background: transparent;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 100%;
+	font-size: 0.95rem;
+}
+
+.accordion {
+  background-color: #FF7000;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #E1A807;
+}
+
+.accordion:before {
+	transform: rotate(-225deg);
+	transition: transform 0.3s ease-in-out;
+}
+
+.accordion:after {
+  content: '+';
+  color: #FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #FFFFFF;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+/*
+.input__container {
+	width: 800px;
+	background-color: #C0C0C0;
+	margin: auto;
+	border-radius: 20px;
+	padding: 30px;
+}
+*/
+
+
+/*
+.input-container {
+  display: -ms-flexbox;  IE10 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #FF7000;
+  color: white;
+  min-width: 70px;
+  text-align: center;
+	 border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+*/
+
+/*Controls the style of the main footer container*/
+.footer {
+	padding: 20px 0;
+	line-height: 1.6;
+	background-color: #C0C0C0;
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+/*Controls the horizontal line on the footer and its colour and shape*/
+
+.footer_hr {
+	width: 100%;
+	background: #FFFFFF;
+	height: 2px;
+	border: none;
+}
+/*Style for the copyright statement in the footer */
+
+.footer__p {
+	color: #E76300;
+	padding: 3px 15px;
+	display: block;
+	text-align: left;
+	vertical-align: middle;
+}
+.footer__img {
+	display: block;
+	margin-top: 20px;
+	float: right;
+	width: 165px;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .cards_item {
+    width: 50%;
+  }
+	.wrapper {
+		width: 400px;
+	}
+}
+
+@media screen and (min-width: 896px) {
+  .cards_item {
+    width: 33.3333%;
+  }
+  .wrapper {
+  margin: 0 auto 0;
+  width: 700px;
+}
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+	.wrapper {
+		width: 200px;
+	}
+}
+
+@media screen and (min-width: 1010px) {
+	.wrapper {
+		width: 800px;
+	}
+}
+
+/* Responsive columns */
+@media screen and (max-width: 500px) {
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	.wrapper {
+		width: 150px;
+	}
+}
+
+

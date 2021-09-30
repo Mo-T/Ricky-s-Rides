@@ -1,10 +1,10 @@
 // JavaScript Document
 //Global Variables - can be used in any of the function as they re declared outside of them
-var carSelected, addExtraItems, checkedAddExtras, numberDays, checkInDate, dropOffDate, addCost, pickUpLocation, dropOffLocation;
-var bookingFee = 50;
-var insuranceFee = 20;
-var dailyPrice = 0;
-var totalCost = 0;
+var carSelected, checkedAddExtras; //GV 1 & 2
+var dailyPrice = 0; //GV 3
+var bookingFee = 50; //GV 4
+var insuranceFee = 20; //GV 5
+var totalCost = 0; //GV 6
 
 function updateCars() {
 	//This is the function called when a user selects one of the available cars on the GUI
@@ -18,21 +18,23 @@ function updateCars() {
 
 function updateBooking() {
 	//This is the function called when the user enters in their reservation details and selects any extra items available
-	addExtraItems = document.getElementsByClassName("addCheck");
+	var addExtraItems = document.getElementsByClassName("addCheck");
 	//This collects all my additionalitems checkboxes and stores them in an object array
 	checkedAddExtras = []; //Empty list to add the selected additional items to
-	addCost = 0;
-	checkInDate = document.getElementById("checkInDate").value;
-	dropOffDate = document.getElementById("dropOffDate").value;
-	numberDays = document.getElementById("numberDays").value;
-	dropOffLocation = document.getElementById("dropOffLocationSelect").value;
-	pickUpLocation = document.getElementById("pickUpLocationSelect").value;
+	var addCost = 0;
+	var checkInDate = document.getElementById("checkInDate").value;
+	var dropOffDate = document.getElementById("dropOffDate").value;
+	var numberDays = document.getElementById("numberDays").value;
+	var dropOffLocation = document.getElementById("dropOffLocationSelect").value;
+	var pickUpLocation = document.getElementById("pickUpLocationSelect").value;
 	for (var i = 0; i < addExtraItems.length; i++) {
 		if (addExtraItems[i].checked) {
 			checkedAddExtras.push(' ' + addExtraItems[i].value); //Finds the price value of the checked extra item
 			addCost += Number(addExtraItems[i].dataset.price);
 		}
 	}
+//	var bookingFee = 50; //GV 4
+//	var insuranceFee = 20; //GV 5
 	totalCost = (numberDays * dailyPrice) + addCost + bookingFee + insuranceFee;
 	document.getElementById("checkInDateOutput").innerHTML = checkInDate;
 	document.getElementById("dropOffDateOutput").innerHTML = dropOffDate;
@@ -49,22 +51,17 @@ function checkDetailInputs() {
 	//Checks that a room type has been selected
 	if (carSelected == null) {
 		document.getElementById("errorMessageCarSelection").innerHTML = "Please select one of the cars available";
+		window.scrollTo(0, document.getElementById("errorMessageCarSelection").offsetTop - 200);
 		return;
 	}
-	
 	//Checks that a valid pickup date has been entered
 	if (document.getElementById("checkInDate").validity.valueMissing || document.getElementById("checkInDate").validity.rangeUnderFlow || document.getElementById("checkInDate").validity.rangeOverFlow) {
 		document.getElementById("errorMessageDate1").innerHTML = "Please enter in a valid date - not a past date";
 		return; //forces the user to fix their - the function will stop running
 	}
-	
-	if (document.getElementById("numberDays").validity.rangeOverflow || document.getElementById("numberDays").validity.rangeUndeflow) {
-		document.getElementById("errorMessagesNumberDays").innerHTML = "Please select a valid number of days between 1 and 21 days";
-		return;
-	}
-	
-	if ( document.getElementById("dropOffDate").value <= document.getElementById("checkInDate").value) {
-		alert("yo");
+	if (document.getElementById("numberDays").validity.valueMissing || document.getElementById("numberDays") == null || document.getElementById("numberDays").validity.rangeOverflow || document.getElementById("numberDays").validity.rangeUndeflow) {
+		document.getElementById("errorMessageNumberDays").innerHTML = "Please select a valid number of days between 1 and 21 days";
+		window.scrollTo(0, document.getElementById("errorMessageNumberDays").offsetTop - 49);
 		return;
 	}
 	
@@ -77,38 +74,39 @@ function checkDetailInputs() {
 	
 	if (document.getElementById("firstNameInput").validity.patternMismatch || document.getElementById("firstNameInput").validity.valueMissing) {
 		document.getElementById("errorMessageFirstName").innerHTML = "Please enter in a valid first name (no numbers)";
+		window.scrollTo(0, document.getElementById("errorMessageFirstName").offsetTop - 49);
 		return;
 	}
 	if (document.getElementById("lastNameInput").validity.patternMismatch || document.getElementById("lastNameInput").validity.valueMissing) {
 		document.getElementById("errorMessageLastName").innerHTML = "Please enter in a valid last name (no numbers)";
+		window.scrollTo(0, document.getElementById("errorMessageLastName").offsetTop - 49);
 		return;
 	}
 	//Checks that a valid email has been entered
 	if (document.getElementById("emailInput") == "" || !document.getElementById("emailInput").checkValidity()) { //checks validity of the email address
 		document.getElementById("errorMessageEmailAddress").innerHTML = "Please enter in a valid email address following the requested format"; //if empty or invalid, htne prints an error message to help user with functionality 
+		window.scrollTo(0, document.getElementById("errorMessageEmailAddress").offsetTop - 49);
 		return; //forces the user to fix their - the function will stop running	
 	}
-	
 	if (document.getElementById("cellphoneInput") == "" || document.getElementById("cellphoneInput").validity.valueMissing || document.getElementById("cellphoneInput").validity.patternMismatch) {
 		document.getElementById("errorMessageCellNumber").innerHTML = "Please enter in a valid cellphone number";
+		window.scrollTo(0, document.getElementById("errorMessageCellNumber").offsetTop - 49);
 		return;
 	}
-	
 	if (document.getElementById("ageInput").validity.rangeOverflow || document.getElementById("ageInput").validity.rangeUnderflow) {
 		document.getElementById("errorMessageAge").innerHTML = "Please enter in a valid age between 25 and 80";
+		window.scrollTo(0, document.getElementById("errorMessageAge").offsetTop - 49);
 		return;
 	}
-	
-	if (document.getElementById("driversLicenseInput").validity.patternMismatch || document.getElementById("driversLicenseInput").cehckValidity()) {
-		document.getElementById("errorMessageDriversLicnese").innerHTML = "Please enter your drivers license number: ########";
-		return;
-	}
-	
+//	if (document.getElementById("driversLicenseInput").validity.patternMismatch || document.getElementById("driversLicenseInput").checkValidity()) {
+//		document.getElementById("errorMessageDriversLicense").innerHTML = "Please enter your drivers license number: ########";
+//		return;
+//	}
 	if (document.getElementById("checkButton").checked == false) {
 		document.getElementById("errorMessageTermsConditions").innerHTML = "You must accept the Terms and Conditions to proceed";
+		window.scrollTo(0, document.getElementById("errorMessageTermsConditions").offsetTop - 49);
 		return;
 	}
-	
 	pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, licenseNumber);
 }
 
@@ -123,15 +121,17 @@ function pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, l
 		Age: userAge,
 		Phone_number: cellphoneNumber,
 		Email_address: emailAddress,
-		Check_In_Date: checkInDate,
-		Drop_Off_Date: dropOffDate,
-		Extras: checkedAddExtras,
-		Room_type: carSelected,
-		Pickup_Location: pickUpLocation,
-		Drop_Off_Location: dropOffLocation,
-		Total_cost: "$" + totalCost,
 		Drivers_License_Number: licenseNumber,
-		Number_of_Days: numberDays
+		Room_type: carSelected,
+		Check_In_Date: checkInDate.value,
+		Drop_Off_Date: dropOffDate.value,
+		Number_of_Days: numberDays.value,
+		Drop_Off_Location: document.getElementById("dropOffLocationSelect"),
+		Pickup_Location: document.getElementById("pickUpLocationSelect"),
+		Extras: checkedAddExtras,
+		Insurance_Fee: insuranceFee,
+		Booking_Fee: bookingFee,
+		Total_cost: "$" + totalCost
 	};
 	reservationsRef.push(reservations); //pushing the JSON file to your database
 	document.getElementById('confirmOverlay').style.height = "100%"; //displays the confirm overlay
@@ -139,7 +139,6 @@ function pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, l
 		location.reload();
 	}, 4000);
 } //end of function
-
 //creating new variables to check the date select is only a present date 
 var today = new Date();
 var dd = today.getDate();
@@ -154,7 +153,6 @@ if (mm < 10) {
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("checkInDate").setAttribute("min", today);
 document.getElementById("dropOffDate").setAttribute("min", today);
-
 //Event listener that will call the updateCars() fucntion when a car card is clicked on the GUI
 var carInputs = document.getElementsByClassName("carCard");
 for (var i = 0; i < carInputs.length; i++) {

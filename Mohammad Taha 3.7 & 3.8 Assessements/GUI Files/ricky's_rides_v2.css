@@ -1,0 +1,278 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body, html {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.main_content {
+	width: 80%;	
+	margin: auto;
+}
+
+.main_content_2 {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+}
+
+header {
+	background-color: #C0C0C0;
+	height: 170px;
+	padding: 30px;
+}
+
+.header_title {
+	color: #FF7000;
+	text-align: left;
+	font-size: 300%;
+	padding: 30px;
+}
+
+.header_logo {
+	float: right;
+	display: inline-block;
+	height: 160%;
+	margin-top: -4.5%;
+	width: 35%;
+	cursor: pointer;
+}
+
+/*----confirm overlay style----*/
+
+#confirmOverlay {
+	/* style on confirm overlay */
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0C1922;
+	opacity: 0.95;
+	transition: 0.2s;
+	width: 100vw;
+	height: 0;
+	/* height adjusted to expand overlay */
+}
+#confirmOverlay p {
+	/* style on text portion of confirm overlay */
+	line-height: 80vh;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.2vw;
+	opacity: 1.0;
+	color: #FFFFFF;
+}
+#confirmOverlay a {
+	/* style on cross to close confirm overlay */
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 45px;
+	font-size: 90px;
+}
+#confirmOverlay a:hover {
+	color: #cccccc;
+}
+
+input:invalid {
+	background-color: #ff0000;
+	opacity: 0.7;
+}
+
+/*Style for inline validation error messages*/
+.errorMessages {
+	text-align: right;
+	color: red;
+	font-size: 18px;
+	float: right;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+
+.footer {
+	padding: 20px 0;
+	line-height: 1.6;
+	background-color: #0C1922;
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+/*Controls the horizontal line on the footer and its colour and shape*/
+
+.footer_hr {
+	width: 100%;
+	background: #FFFFFF;
+	height: 2px;
+	border: none;
+}
+/*Style for the copyright statement in the footer */
+
+.footer__p {
+	color: #FFFFFF;
+	padding: 3px 15px;
+	display: block;
+	text-align: left;
+	vertical-align: middle;
+}
+.footer__img {
+	display: block;
+	float: right;
+	width: 11%;
+	cursor: pointer;
+}
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+	  font-family: 'Montserrat', sans-serif;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  transition: 0.3s ease-in-out;
+  
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transition: 0.3s ease-in-out;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+/*
+.input-container {
+  display: -ms-flexbox;  IE10 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15000px;
+}
+*/
+
+.icon {
+  color: white;
+  width: 25px;
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.card:hover {
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.card_image {
+	width: 300px;
+	max-width: 100%;
+	height: 215px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin: auto;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  text-align: center;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;   
+  font-family: 'Lato', sans-serif; 
+  text-align: center;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+

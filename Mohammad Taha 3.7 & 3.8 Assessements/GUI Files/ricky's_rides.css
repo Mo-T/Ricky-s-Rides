@@ -1,11 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-body {
+body, html {
 	display: block;
 	margin: 0;
 	padding: 0;
+}
+
+.main_content {
+	width: 80%;	
+	margin: auto;
 }
 
 header {
@@ -35,23 +39,28 @@ header {
 }
 
 /* Float four columns side by side */
+
 .column {
   float: left;
   width: 33%;
   padding: 20px 10px;
 }
 
+
 /* Remove extra left and right margins, due to padding */
 .row {margin: 0 -5px;}
 
 /* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
+
 /* Style the counter cards */
+
 .carCard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -64,6 +73,7 @@ header {
 .carCard img {
 	width: 100%;
 }
+
 
 /*----confirm overlay style----*/
 
@@ -105,9 +115,20 @@ header {
 	color: #cccccc;
 }
 
-:invalid {
+input:invalid {
 	background-color: #ff0000;
 	opacity: 0.7;
+}
+
+/*Style for inline validation error messages*/
+.errorMessages {
+	text-align: right;
+	color: red;
+	font-size: 18px;
+	float: right;
+	font-style: italic;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 5px;
 }
 
 .footer {
