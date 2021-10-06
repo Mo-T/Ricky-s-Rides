@@ -1,15 +1,15 @@
 // JavaScript Document
 //Global Variables - can be used in any of the function as they re declared outside of them
-var carSelected, checkedAddExtras; //GV 1 & 2
-var dailyPrice = 0; //GV 3
-const bookingFee = 50; //GV 4
-const insuranceFee = 20; //GV 5
-var totalCost = 0; //GV 6
+var carSelected, checkedAddExtras, addCost; //GV 1 & 2 & 3
+var dailyPrice = 0; //GV 4
+const bookingFee = 50; //GV 5
+const insuranceFee = 20; //GV 6
+var totalCost = 0; //GV 7
 function updateCars() {
 	//This is the function called when a user selects one of the available cars on the GUI
 	carSelected = this.dataset.name; //Stores the selected car
 	dailyPrice = this.dataset.price; //Finds price of selected car
-	window.scrollTo(0, document.getElementById("bookingInformation").offsetTop - 49);
+	window.scrollTo(0, document.getElementById("bookingInformation").offsetTop - 10);
 	document.getElementById("carOutput").innerHTML = carSelected; //Outputing to the divs in your HTML that will make the details appear on the "booking information" table
 	document.getElementById("priceOutput").innerHTML = "$" + dailyPrice;
 	updateBooking(); //Calling the next function which is the updateBooking() function
@@ -20,7 +20,8 @@ function updateBooking() {
 	var addExtraItems = document.getElementsByClassName("addCheck");
 	//This collects all my additionalitems checkboxes and stores them in an object array
 	checkedAddExtras = []; //Empty list to add the selected additional items to
-	var addCost = 0;
+//	var addCost = 0;
+	addCost = 0;
 	var checkInDate = document.getElementById("checkInDate").value;
 	var dropOffDate = document.getElementById("dropOffDate").value;
 	var numberDays = document.getElementById("numberDays").value;
@@ -38,13 +39,13 @@ function updateBooking() {
 	document.getElementById("checkInDateOutput").innerHTML = checkInDate;
 	document.getElementById("dropOffDateOutput").innerHTML = dropOffDate;
 	document.getElementById("dayOutput").innerHTML = numberDays;
-	document.getElementById("bookingFeeOutput").innerHTML = "$" + bookingFee;
-	document.getElementById("insuranceFeeOutput").innerHTML = "$" + (insuranceFee * numberDays);
 	document.getElementById("extrasOutput").innerHTML = checkedAddExtras;
 	document.getElementById("pickUpLocationOutput").innerHTML = pickUpLocation;
 	document.getElementById("dropOffLocationOutput").innerHTML = dropOffLocation;
+	document.getElementById("extrasPriceOutput").innerHTML = "$" + addCost;
+	document.getElementById("bookingFeeOutput").innerHTML = "$" + bookingFee;
+	document.getElementById("insuranceFeeOutput").innerHTML = "$" + (insuranceFee * numberDays);
 	document.getElementById("totalPriceOutput").innerHTML = "$" + totalCost;
-//	window.scrollTo(0, document.getElementById("bookingInformation").offsetTop - 49);
 }
 
 function checkDetailInputs() {
@@ -52,11 +53,11 @@ function checkDetailInputs() {
 	if (carSelected == null) {
 		document.getElementById("errorMessageCarSelection").innerHTML = "Please select a car to continue";
 		window.scrollTo(0, document.getElementById("errorMessageCarSelection").offsetTop - 550);
-		return;
 	}
 	//Checks that a valid pickup date has been entered
 	if (document.getElementById("checkInDate").validity.valueMissing || document.getElementById("checkInDate").validity.rangeUnderFlow || document.getElementById("checkInDate").validity.rangeOverFlow) {
 		document.getElementById("errorMessageDate1").innerHTML = "Please enter in a valid date - not a past date";
+		window.scrollTo(0, document.getElementById("errorMessageDate1").offsetTop - 49);
 		return; //forces the user to fix their - the function will stop running
 	}
 	if (document.getElementById("numberDays").validity.valueMissing || document.getElementById("numberDays") == null || document.getElementById("numberDays").validity.rangeOverflow || document.getElementById("numberDays").validity.rangeUndeflow) {
@@ -102,14 +103,10 @@ function checkDetailInputs() {
 		document.getElementById("errorMessageDriversLicense").innerHTML = "Please enter a valid drivers license number: XX######";
 		return;
 	}
-//	if (document.getElementById("checkButton").checked == false) {
-//		document.getElementById("errorMessageTermsConditions").innerHTML = "You must accept the Terms and Conditions to proceed";
-//		window.scrollTo(0, document.getElementById("errorMessageTermsConditions").offsetTop - 49);
-//		return;
-//	}
-//	if (document.getElementById("checkButton").checked) {
-//			document.getElementById("confirmButton").disabled == false;
-//	}
+	if (document.getElementById("checkButton").checked == false) {
+		document.getElementById("errorMessageTermsConditions").innerHTML = "You must accept the Terms and Conditions to proceed";
+		return;
+	}
 	pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, licenseNumber);
 }
 
@@ -132,6 +129,7 @@ function pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, l
 		Drop_Off_Location: document.getElementById("dropOffLocationSelect").value,
 		Pickup_Location: document.getElementById("pickUpLocationSelect").value,
 		Extras: checkedAddExtras,
+		Extras_Cost: "$" + addCost,
 		Insurance_Fee: "$" + insuranceFee,
 		Booking_Fee: "$" + bookingFee,
 		Total_cost: "$" + totalCost
@@ -182,15 +180,15 @@ for (i = 0; i < allExtraInputs.length; i++) {
 	allExtraInputs[i].addEventListener('input', updateBooking);
 }
 
+//Initially disables the confirm button
 document.getElementById("confirmButton").disabled = true;
-document.getElementById("confirmButton").style.opacity = "0.3";
-//add event listener
-document.getElementById('checkButton').addEventListener('click', function(event) {
-    document.getElementById("confirmButton").disabled = !document.getElementById("confirmButton").disabled;
-	document.getElementById("confirmButton").style.opacity = "1";
+////Event listener for confirm button that enables the button if the terms and condititions checkbox is ticked
+//
+document.getElementById('checkButton').addEventListener('click', function() {
+	document.getElementById("confirmButton").disabled = !document.getElementById("confirmButton").disabled;
 });
-
-document.getElementById("confirmButton").addEventListener('click', function(event) {
+//Event listener for confirm button - once clicked, the checDetailInputs() will run
+document.getElementById("confirmButton").addEventListener('click', function() {
 	checkDetailInputs();
 });
 

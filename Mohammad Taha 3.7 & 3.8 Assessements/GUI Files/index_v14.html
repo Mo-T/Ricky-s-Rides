@@ -5,12 +5,12 @@
 	<title>Ricky's Rides</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="ricky's_rides_v6.css" rel="stylesheet" type="text/css">
+	<link href="ricky's_rides_v7.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<nav>
 		<img alt="ricky's_rides_logo" class="nav_logo" height="100" src="../Images/Ricky's_Rides_Transparent_Logo.png" title="ricky's_rides_logo" width="150">
-	</nav> <div class="parallax_effect"></div>	
+	</nav> <div class="parallax_effect" title="new_car_nature"></div>	
 	<h1>Select Your Car</h1>
 	
 
@@ -148,29 +148,28 @@
 </div>
 </div>
 	<br>
-<div class="errorMessages" id="errorMessageCarSelection"></div><br>
+<div class="errorMessagesCarCards" id="errorMessageCarSelection"></div><br>
 	<br>
-	<hr>
 <div class="main_content_2"><br>
 	<button class="accordion reservationDetails"><strong>Step 2 -</strong> Enter In Your Booking Details </button>
 		<div class="panel"><br>
-	<label>Check in Date:</label>
+	<label><strong>Check in Date:</strong></label>
 		<input class="dateInput" id="checkInDate" onchange="updateBooking()" placeholder="&#xf133;" required="" type="date">
 	<div class="errorMessages" id="errorMessageDate1"></div><br>
 	<br>
-	<label>Drop off Date:</label>
+	<label><strong>Drop off Date:</strong></label>
 		<input class="dateInput" id="dropOffDate" onchange="updateBooking()" required="" type="date">
 	<div class="errorMessages" id="errorMessageDate2"></div><br>
 	<br>
-	<label>Number of Days:</label>
+	<label><strong>Number of Days:</strong></label>
 		<input id="numberDays" max="21" min="1" oninput="updateBooking()" placeholder="3" required="" type="number">
 	<div class="errorMessages" id="errorMessageNumberDays"></div><br>
 			<br></div><br>
 	<button class="accordion"><strong>Step 3 -</strong> Select Your Location </button>
 		<div class="panel">
-	<p>Pickup Location</p><select id="pickUpLocationSelect" onchange="updateBooking()">
-		<option value="Ricky's Rides">
-			Ricky's Rides
+	<p><strong>Pickup Location:</strong></p><select id="pickUpLocationSelect" onchange="updateBooking()">
+		<option value="Ricky's Rides Depot">
+			Ricky's Rides Depot
 		</option>
 		<option selected="selected" value="Dunedin Airport">
 			Dunedin Airport
@@ -180,8 +179,8 @@
 		<option selected="selected" value="Same as Pickup Location">
 			Same as Pickup Location
 		</option>
-		<option value="Ricky's Rides">
-			Ricky's Rides
+		<option value="Ricky's Rides Depot">
+			Ricky's Rides Depot
 		</option>
 		<option value="Dunedin Airport">
 			Dunedin Airport
@@ -214,7 +213,7 @@
       <input class="checkbox addCheck" data-price="90" type="checkbox" value="Roof Racks">
       <div class="option_inner extras">
         <div class="tickmark"></div>
-        <div class="icon"><i class="fa fa-chain"></i></div>
+        <div class="icon"><i class="fa fa-road"></i></div>
         <div class="name">Roof Racks - $90</div>
       </div>
     </label>
@@ -240,76 +239,76 @@
 	</div>
 	</div>
 
-	<br
+	<br>
 	<!--inputs for cutomer details-->
 	<button class="accordion"><strong>Step 5 -</strong> Enter Your Personal Details </button>
 		<div class="panel">
 <br>
-	<label>First Name:</label>
+	<label><strong>First Name</strong></label>
 		<input autocomplete="on" id="firstNameInput" pattern="[A-Za-z'-]{2,11}" placeholder="John" required="" title="Please enter in your first name" type="text">
 	<div class="errorMessages" id="errorMessageFirstName"></div><br>
 	<br>
-	<label>Last Name:</label>
+	<label><strong>Last Name</strong></label>
 		<input autocomplete="on" id="lastNameInput" pattern="[A-Za-z'-]{2,11}" placeholder="Smith" required="" title="Pleas enter in your last name" type="text">
 	<div class="errorMessages" id="errorMessageLastName"></div><br>
 	<br>
-	<label>Email Address:</label>
+	<label><strong>Email Address</strong></label>
 		<input autocomplete="on" id="emailInput" placeholder="johnsmith@gmail.com" required="" title="Please enter in your email address" type="email">
 	<div class="errorMessages" id="errorMessageEmailAddress"></div><br>
 	<br>
-	<label>Cellphone Number:</label>
+	<label><strong>Cellphone Number</strong></label>
 		<input autocomplete="on" id="cellphoneInput" pattern="02[0-9]\d{6,8}" placeholder="02534478175" required="" title="Please enter in your cellphone number" type="tel">
 	<div class="errorMessages" id="errorMessageCellNumber"></div><br>
 	<br>
-	<label>Age:</label>
+	<label><strong>Age</strong></label>
 		<input autocomplete="on" id="ageInput" max="80" min="25" placeholder="25" required="" title="Please enter in your age" type="number">
 	<div class="errorMessages" id="errorMessageAge"></div><br>
 	<br>
-	<label>NZ Drivers License Number</label>
+	<label><strong>NZ Drivers License Number</strong></label>
 		<input autocomplete="on" id="driversLicenseInput" pattern="[A-Z]{2}[0-9]{6}" placeholder="DN123456" required="" title="Please enter in your NZ drivers license number - found on the back of our drivers license">
 	<div class="errorMessages" id="errorMessageDriversLicense"></div><br>
 			<br>
-	<label>Comments</label> 
+	<label><div class="comments_title"><strong>Comments</strong></div></label> 
 	<textarea placeholder="Please enter any other information here"></textarea><br>
 	<br>
 		</div>
 	<br><br>
-	<div class="button_container">
-	<label><input class="terms_conditions_button" id="checkButton" type="checkbox">I Agree to Terms and Conditions</label><br>
-	<div class="errorMessages" id="errorMessageTermsConditions"></div><br>
-	<br>
-	<button id="confirmButton" type="button">Confirm Booking</button><br>
-		</div>
-	<br>
-	<h1 id="bookingInformation">Booking Information:</h1>
-	<hr>
+	<h1 id="bookingInformation">Booking Information</h1>
+	
 	<table>
+		  <thead>
+    <tr>
+      <th>Required Information</th>
+	  <th>Submitted Information</th>
+    </tr>
+  </thead>
+  <tbody>
 		<tr>
-			<td>Car:</td>
+			<td>Car</td>
 			<td>
 				<div id="carOutput">-</div>
 			</td>
 		</tr>
 		<tr>
-			<td>Price Per Day:</td>
+			<td>Price Per Day</td>
 			<td>
 				<div id="priceOutput">-</div>
 			</td>
 		</tr>
 		<tr>
-			<td>Check In Date:</td>
+			<td>Check In Date</td>
 			<td>
 				<div id="checkInDateOutput">-</div>
 			</td>
 		</tr>
 		<tr>
-			<td>Drop Off Date:</td>
+			<td>Drop Off Date</td>
 			<td>
 				<div id="dropOffDateOutput">-</div>
 			</td>
 		</tr>
 		<tr>
-			<td>Number of Days:</td>
+			<td>Number of Days</td>
 			<td>
 				<div id="dayOutput">-</div>
 			</td>
@@ -327,33 +326,42 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Extras:</td>
+			<td>Extras</td>
 			<td>
 				<div id="extrasOutput">-</div>
 			</td>
 		</tr>
+	    <tr>
+		    <td>Extras Total Price</td>
+		    <td>
+				<div id="extrasPriceOutput">-</div></td></tr>
 		<tr>
-			<td>Booking Fee:</td>
+		<tr>
+			<td>Booking Fee</td>
 			<td>
 				<div id="bookingFeeOutput">-</div>
 			</td>
 		</tr>
 		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td>Insurance Fee ($20/Day):</td>
+			<td>Insurance Fee ($20/Day)</td>
 			<td>
 				<div id="insuranceFeeOutput">-</div>
 			</td>
 		</tr>
-		<tr>
-			<td>Total Price:</td>
+			<td>Total Price</td>
 			<td>
 				<div id="totalPriceOutput">-</div>
 			</td>
 		</tr>
-	</table><br>
+		</tbody>
+	</table><br><br>
+	<div class="button_container">
+	<label><input class="terms_conditions_button" id="checkButton" type="checkbox" title="Check the Terms & Conditions box to proceed">I Agree to Terms and Conditions</label><br>
+	<div class="errorMessages" id="errorMessageTermsConditions"></div><br>
+	<br>
+	<button id="confirmButton" type="button" title="button_to_confirm_booking">Confirm Booking</button><br>
+		</div>
+	<br><br>
 	</div>
 
 	<footer class="footer">
@@ -401,9 +409,8 @@
     <script src="ricky's_rides_v5.js"></script>
     <script src="ricky's_rides_v6.js"></script>
     <script src="ricky's_rides_v7.js"></script>
-	<script src="ricky's_rides_v8.js">-->
-		
-	<script src="ricky's_rides_v9.js">
-	</script>
+	<script src="ricky's_rides_v8.js"></script>
+	<script src="ricky's_rides_v9.js"></script>-->
+	<script src="ricky's_rides_v10.js"></script>
 </body>
 </html>

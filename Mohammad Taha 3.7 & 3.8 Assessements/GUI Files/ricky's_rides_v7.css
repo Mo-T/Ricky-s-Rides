@@ -10,6 +10,7 @@ body, html {
 	display: block;
 	margin: 0;
 	padding: 0;
+	font-family: 'Lato', sans-serif;
 /*	background-image: url("https://allfreedesigns.com/wp-content/uploads/2015/06/black-patterns-4.jpg");*/
 }
 
@@ -21,7 +22,7 @@ body, html {
 .main_content_2 {
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
-	width: 75%;
+	width: 78%;
 	margin: auto;
 }
 
@@ -33,7 +34,7 @@ nav {
 .nav_logo {
 	float: left;
 	margin-left: 1%;
-	margin-top: 2px;
+	margin-top: 5px;
 	width: 470px;
 	cursor: pointer;
 	z-index: 1;
@@ -66,11 +67,12 @@ nav {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #0C1922;
+	background-color: #FF7000;
 	opacity: 0.95;
 	transition: 0.2s;
 	width: 100vw;
 	height: 0;
+	z-index: 1000;
 	/* height adjusted to expand overlay */
 }
 #confirmOverlay p {
@@ -95,23 +97,26 @@ nav {
 	color: #cccccc;
 }
 
-input:invalid, #driversLicenseInput:invalid {
+input:invalid, #driversLicenseInput:invalid, select:invalid {
 	border: 2px solid #ff0000;
 }
-
-/*
-input:valid {
-	border: 2px solid #02C300;
-}
-*/
 
 /*Style for inline validation error messages*/
 .errorMessages {
 	text-align: right;
-	color: red;
+	color: #ff0000;
 	margin-right: 10px;
 	font-size: 14px;
 	float: right;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+
+.errorMessagesCarCards {
+	text-align: center;
+	color: #ff0000;
+	font-size: 20px;
 	font-style: italic;
 	font-family: 'Montserrat', sans-serif;
 	margin-top: 5px;
@@ -188,7 +193,7 @@ img {
 }
 
 .card:hover {
-  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.4);
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.5);
   transition: 0.3s ease-in-out;
 }
 
@@ -218,7 +223,7 @@ img {
 }
 
 .card_title {
-  color: #ffffff;
+  color: #FFFFFF;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: 1px;
@@ -240,21 +245,38 @@ img {
 }
 
 table {
-	margin: auto;
+	margin: 0 auto;
 	width: 80%;
+	border: 2px solid #ccc;
+    border-collapse: collapse;
+    padding: 0;
+    table-layout: fixed;
 }
 
-/*
-th {
+table tr {
+  background-color: #F8F8F8;
+  border: 2px solid #dddddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  background: #dddddd;
+  letter-spacing: .1em;
+  font-weight: bold;
+  text-transform: uppercase;
   position: sticky;
-  top: 0;
 }
 
-td {
-  opacity: 0.5;
-}	
-*/
-
+table td:hover {
+	background: #ECECEC;
+}
 
 /*--- EXTRAS CARDS STYLE ---*/
 
@@ -290,7 +312,7 @@ td {
   cursor: pointer;
   color: #585c68;
   display: block;
-	margin: auto;
+  margin: auto;
   border: 5px solid transparent;
   position: relative;
 }
@@ -301,6 +323,7 @@ td {
 
 .option_item .option_inner .icon .fa {
   font-size: 30px;
+	margin-bottom: 7px;
 }
 
 .option_item .option_inner .name {
@@ -323,11 +346,11 @@ td {
 }
 
 .option_item .option_inner .tickmark:before {
-  content: "✔";
+  content: "";
   position: absolute;
   top: -18px;
-  left: -20px;
-  width: 15px;
+  left: -18px;
+  width: 20px;
   height: 5px;
   border: 3px solid;
   border-color: transparent transparent #fff #fff;
@@ -352,12 +375,11 @@ td {
 	width: 100%;
 	margin-top: 10px;
 	max-width: 100%;
-	border-bottom-right-radius: 50px;
-	border-top-right-radius: 50px;
+	border-radius: 50px;
 	font-size: 0.95rem;
 	outline: none;
 }
-
+	
 .comments_title {
 	margin-bottom: 10px;
 }
@@ -414,6 +436,11 @@ textarea {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.4s ease-in-out;
+}
+
+#panel_extras p, label {
+	text-align: center;
+	font-weight: 600;
 }
 
 @keyframes click-wave {
@@ -484,7 +511,7 @@ textarea {
 }
 
 .button_container {
-	width: 50%;
+	width: 60%;
 	padding: 15px;
 	background-color: #666666;
 	color: #FFFFFF;
@@ -556,6 +583,7 @@ textarea {
   }
 	.wrapper {
 		width: 400px;
+		margin: auto;
 	}
 }
 
@@ -564,7 +592,7 @@ textarea {
     width: 33.3333%;
   }
   .wrapper {
-  margin: 0 auto 0;
+  margin: auto;
   width: 700px;
 }
 }
@@ -578,6 +606,7 @@ textarea {
   }
 	.wrapper {
 		width: 200px;
+		margin: auto;
 	}
 	.button_container {
 		width: 100%;
@@ -587,15 +616,23 @@ textarea {
 	}
 }
 
+@media screen and (min-width: 600px) and (max-width: 852px) {
+	.button_container {
+		width: 80%;
+	}
+}
+
 @media screen and (min-width: 1000px) {
 	.wrapper {
 		width: 800px;
+		margin: auto;
 	}
 }
 
 @media screen and (min-width: 1350px) {
 	.wrapper {
 		width: 1000px;
+		margin: auto;
 	}
 }
 
@@ -606,8 +643,50 @@ textarea {
 		width: 70%;
 	}
 	.wrapper {
-		width: 150px;
+		width: 200px;
+		margin: auto;
 	}
 }
 
+@media screen and (max-width: 374px) {
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	.main { 
+	max-width: 1800px;
+  	margin: 0 auto;
+	}
+	.card_image {
+		width: 200px;
+	}
+	.accordion, .accordion:after {
+		font-size: 12.5px;
+	}
+}
 
+@media screen and (min-width: 375px) and (max-width: 499px) {
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	.main { 
+	max-width: 1300px;
+  	margin: 0 auto;
+	}
+	.card_image {
+		width: 270px;
+		margin: 0 auto;
+	}
+	.accordion, .accordion:after {
+		font-size: 19px;
+	}
+}
