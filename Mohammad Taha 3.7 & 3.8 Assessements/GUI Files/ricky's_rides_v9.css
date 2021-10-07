@@ -1,0 +1,836 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Importing CSS fonts from google */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/*Font One: font-family: 'Montserrat', sans-serif; */
+
+/*Font Two: font-family: 'Lato', sans-serif;*/
+
+/*Controls the display of the GUI  so that the background is white and there are no borders present around the exterior of the page*/
+
+body, html {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+}
+/*Controls the main content within the body for the car cards, their placements and style (for text)*/
+
+.main_content {
+	width: 80%;
+	margin: auto;
+}
+/*Controls the main content within the body for the inputs and the second half of the GUI, their placements and style (for text)*/
+
+.main_content_2 {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	width: 78%;
+	margin: auto;
+}
+/*Controls the display and style of the navbar*/
+
+nav {
+	background-color: #666666;
+	display: block;
+	height: 100px;
+}
+/*Controls the display, placement and style of the logo inside of the navbar*/
+
+.nav_logo {
+	float: left;
+	margin-left: 1%;
+	margin-top: 5px;
+	width: 470px;
+	cursor: pointer;
+	z-index: 1;
+}
+/*Controls the placement, scroll effect and view of the parallax image under the navbar*/
+
+.parallax_effect {
+	position: relative;
+	z-index: 1000;
+	width: 100%;
+	height: 450px;
+	background-color: rgb(50, 50, 50);
+	background: url("https://www.teahub.io/photos/full/193-1934905_car-nature-driving.jpg") no-repeat 50% 50% fixed;
+	box-shadow: rgba(50, 50, 93, 0.5) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
+	background-size: cover;
+	overflow: hidden;
+	cursor: pointer;
+	background-attachment: fixed;
+}
+/*----confirm overlay style----*/
+
+/* Controls the style on confirm overlay */
+
+#confirmOverlay {
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #FF7000;
+	opacity: 0.95;
+	transition: 0.2s;
+	width: 100vw;
+	height: 0;
+	/* height adjusted to expand overlay */
+	z-index: 1000;
+}
+/* Controls the style on text portion of confirm overlay */
+
+#confirmOverlay p {
+	line-height: 80vh;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.2vw;
+	opacity: 1.0;
+	color: #FFFFFF;
+}
+/* Controls the style on the cross (x) to close confirm overlay */
+
+#confirmOverlay a {
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 45px;
+	font-size: 90px;
+}
+/*Creates a hover effect on the cross (x) on the confirm overlay so that the user knows they are hovering over it/clickable*/
+
+#confirmOverlay a:hover {
+	color: #cccccc;
+}
+/*--- End of style for the confirm overlay ---*/
+
+/*--- Style for the inputs ---*/
+
+/*Controls the style and the dimensions of the input fields*/
+
+[type='text'], select, [type='email'], [type="tel"], [type='date'], [type='number'], #driversLicenseInput {
+	padding: 0.5rem;
+	background: transparent;
+	vertical-align: middle;
+	width: 100%;
+	margin-top: 10px;
+	max-width: 100%;
+	border-radius: 50px;
+	font-size: 0.95rem;
+	outline: none;
+}
+.comments_title {
+	margin-bottom: 10px;
+}
+/*Controls style and dimensions of the textarea input field*/
+
+textarea {
+	padding: 0.5rem;
+	background: transparent;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 100%;
+	font-size: 0.95rem;
+}
+/*Controls the style of the border of inputs when invalid data is entered/selected */
+
+input:invalid, #driversLicenseInput:invalid, select:invalid {
+	border: 2px solid #ff0000;
+}
+/*--- End of style for inputs ---*/
+
+/*--- Style for error messages ---*/
+
+/*Style for inline validation error messages under each input*/
+
+.errorMessages {
+	text-align: right;
+	color: #ff0000;
+	margin-right: 10px;
+	font-size: 14px;
+	float: right;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+/*Style for the inline validation error message for the selection of car cards*/
+
+.errorMessagesCarCards {
+	text-align: center;
+	color: #ff0000;
+	font-size: 20px;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+/*--- End of style for error messages ---*/
+
+/*--- Style for car cards ---*/
+
+/* Design for the car cards */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+/*Controls the width of the container of the cards*/
+
+.main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+/*Styles the h1 and h2 heading tags and their placement, font and colour*/
+
+h1, h2 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #FF7000;
+}
+/*Controls the size of the car images wihtin the car cards*/
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+/*Controls the style on the select button at the bottom of each car card at the top of the GUI*/
+
+.btn {
+	color: #ffffff;
+	padding: 0.8rem;
+	font-size: 15px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	font-weight: 400;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	background: transparent;
+	transition: 0.3s ease-in-out;
+}
+/*Creates a hover effect on the select button at the bottom of each car card so that the user knows they are hovering over it/clickable*/
+
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: 0.3s ease-in-out;
+}
+/*Controls the display of the car cards and their positions and scalability */
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+/*Controls how the cards are displayed when scaled*/
+
+.cards_item {
+	display: flex;
+	padding: 1rem;
+}
+/*Styles the car cards and adds special effect to them */
+
+.card {
+	background-color: #FFFFFF;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: 0.3s ease-in-out;
+	border-radius: 6px;
+	border: 2px solid #FF7000;
+	cursor: pointer;
+}
+/*Adds a hover effect for box shadow on the car cards*/
+
+.card:hover {
+	box-shadow: 2px 8px 16px 2px rgba(0, 0, 0, 0.5);
+	transition: 0.3s ease-in-out;
+}
+/*
+.card:checked {
+	box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.8);
+	background-color: red;
+}
+*/
+
+/* Adds a focus effect to the select button so the user knows which car they have selected*/
+
+.btn:focus {
+	background-color: #FF7000;
+	box-shadow: 2px 6px 12px 2px rgba(0, 0, 0, 0.3);
+	font-weight: 700;
+}
+/*Controls the style and size of the car images inside the car cards*/
+
+.card_image {
+	width: 300px;
+	max-width: 100%;
+	height: 215px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin: auto;
+}
+/*Controls the style of the main car cards, adding a gradient background colour to make it stand out*/
+
+.card_content {
+	padding: 1rem;
+	background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+}
+/*Styles the h1 tags in each car card so that the titles stand out to the user*/
+
+.card_title {
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 22px;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	background-color: #FF7000;
+	border-radius: 6px;
+	text-align: center;
+}
+/*Styles the main text of the card which consists of the information under the title - to make the text more clear and large enough to see*/
+
+.card_text {
+	color: #ffffff;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin-bottom: 1.25rem;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+/*--- End of style for car cards ---*/
+
+/*--- Table Style --- */
+
+/*Controls the style, position, and display of the summary table*/
+
+table {
+	margin: 0 auto;
+	width: 80%;
+	border: 2px solid #ccc;
+	border-collapse: collapse;
+	padding: 0;
+	table-layout: fixed;
+}
+/*Controls the style and appearance of each row on the summary table*/
+
+table tr {
+	background-color: #F8F8F8;
+	border: 2px solid #dddddd;
+	padding: 0.35em;
+}
+/*Controls the style and appearance of each cell (standard and header) on the summary table*/
+
+table th, table td {
+	padding: 0.625em;
+	text-align: center;
+}
+/*Controls the style and display of the header cells on the summary table*/
+
+table th {
+	font-size: .85em;
+	background: #dddddd;
+	letter-spacing: .1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: sticky;
+}
+/*Adds a hover effect to each standard cell on the summary table */
+
+table td:hover {
+	background: #ECECEC;
+}
+/*--- EXTRAS CARDS STYLE ---*/
+
+/*Styles the display of the container for the extra options*/
+
+.extras_container {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+/*Controls the placement of each option card and makes the height and width of all the cards the same for consitency*/
+
+.extras_container .option_item {
+	display: block;
+	position: relative;
+	width: 175px;
+	height: 175px;
+	margin: 10px;
+}
+/*Hides the checkbox that appears above each card - card can be clicked instead and the checkbox looks cluttered with the design*/
+
+.extras_container .option_item .checkbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0;
+}
+/*Controls the style of the border that appears around the car once it is clicked as well as the style of the inner icon and text within each card*/
+
+.option_item .option_inner {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border-radius: 5px;
+	text-align: center;
+	padding: 58px 40px;
+	cursor: pointer;
+	color: #585c68;
+	display: block;
+	margin: auto;
+	border: 5px solid transparent;
+	position: relative;
+}
+/*Controls the position of the icon on each card*/
+
+.option_item .option_inner .icon {
+	margin-bottom: 10px;
+}
+/*Styles the size and placement/poistion of the inner icons and the text on each card*/
+
+.option_item .option_inner .icon .fa {
+	font-size: 30px;
+	margin-bottom: 7px;
+}
+/*Styles the placement and the size of the text that describes the icons on each card*/
+
+.option_item .option_inner .name {
+	user-select: none;
+	font-size: 14px;
+}
+/*Allows for a border to be displayed once the card is clicked on to alert the user that it has been clicked*/
+
+.option_item .checkbox:checked~.option_inner.extras {
+	border-color: #FF7000;
+	color: #FF7000;
+}
+/*Controls the border of the top left corner of each card that appears after a card is clicked*/
+
+.option_item .option_inner .tickmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 22px solid;
+	border-color: #000 transparent transparent #000;
+	display: none;
+}
+/*Styles the tick mark that appears on the top left border of each card once they are clicked*/
+
+.option_item .option_inner .tickmark:before {
+	content: "";
+	position: absolute;
+	top: -18px;
+	left: -18px;
+	width: 20px;
+	height: 5px;
+	border: 3px solid;
+	border-color: transparent transparent #fff #fff;
+	transform: rotate(-45deg);
+}
+/*Controls the display of the top left corner border and the tick mark that appears on it*/
+
+.option_item .checkbox:checked~.option_inner .tickmark {
+	display: block;
+}
+/*Styles the background colour of the border that appears on the top left of each card once they are clicked on*/
+
+.option_item .option_inner.extras .tickmark {
+	border-color: #FF7000 transparent transparent #FF7000;
+}
+/*--- END OF EXTRAS CARD STYLE ---*/
+
+/*--- Style for the accordion layouts ---*/
+
+/*Conrols the style and display of the accordion button*/
+
+.accordion {
+	background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+	color: #ffffff;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 20px;
+	transition: 0.4s;
+	border-radius: 10px;
+}
+/*Adds a hover effect on the accordion button so that the user knows that it's clickable*/
+
+.accordion:hover {
+	background: linear-gradient(to bottom left, #FF7000 40%, #E1A807 100%);
+}
+/*Controls the container that contains the content of the accordion when the accordion is opened - as well as the height once open*/
+
+.panel {
+	padding: 0 18px;
+	background-color: #FFFFFF;
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.4s ease-in-out;
+}
+/*Styles the text in the extra options accordion*/
+
+#panel_extras p, label {
+	text-align: center;
+	font-weight: 600;
+}
+/*--- End of style for accordions ---*/
+
+/*--- Style for terms and conditions checkbox/button --- */
+
+/*Specifies an animation code that produces an animation once the terms and conditions button/checkbox is clicked*/
+
+@keyframes click-wave {
+	0% {
+		height: 40px;
+		width: 40px;
+		opacity: 0.35;
+		position: relative;
+	}
+	100% {
+		height: 200px;
+		width: 200px;
+		margin-left: -80px;
+		margin-top: -80px;
+		opacity: 0;
+	}
+}
+/*Styles the terms and conditions button/checkbox - placement position, display, background colours*/
+
+.terms_conditions_button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	transition: all 0.10s ease-out 0s;
+	background: #cbd1d8;
+	border: none;
+	border-radius: 10px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 0.5rem;
+	outline: none;
+	z-index: 1000;
+}
+/*Adds a hover effect to the terms and conditions button/checkbox that changes the background*/
+
+.terms_conditions_button:hover {
+	background: #9faab7;
+}
+/*Styles the terms and conditions button/checkbox after it has been clicked/checked*/
+
+.terms_conditions_button:checked {
+	background: #FF7000;
+}
+/*Responsible for displaying the tick icon (styles its position, display and colour) once the terms and condition button/checkbox is clicked*/
+
+.terms_conditions_button:checked::before {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	content: '✔';
+	display: inline-block;
+	font-size: 26.66667px;
+	text-align: center;
+	line-height: 40px;
+}
+/*Controls the style and placement of the terms and conditions button checkbox after it has been clicked and also controls the animation once clicked*/
+
+.terms_conditions_button:checked::after {
+	-webkit-animation: click-wave 0.65s;
+	-moz-animation: click-wave 0.65s;
+	animation: click-wave 0.65s;
+	background: #FF7000;
+	content: '';
+	display: block;
+	position: relative;
+	z-index: 100;
+}
+/*--- End of style for the terms and conditions checkbox/button ---*/
+
+/*--- Style for the confirm and terms and conditions buttom container ---*/
+
+/*Styles the placement, colour and the effects on the confirm and terms and conditions button*/
+
+.button_container {
+	width: 60%;
+	padding: 15px;
+	background-color: #666666;
+	color: #FFFFFF;
+	border-radius: 12px;
+	margin: auto;
+	box-shadow: 3px 6px 11px 3px rgba(0, 0, 0, 0.3);
+}
+/*--- End of style for the confirm and terms and conditions button container ---*/
+
+/*--- Style for the confirm button ---*/
+
+.button_container #confirmButton {
+	border-radius: 12px;
+	padding: 20px;
+	margin: auto;
+	cursor: pointer;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 18px;
+	opacity: 1;
+	font-weight: 700;
+	background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+	border: none;
+	box-shadow: 2px 6px 12px 2px rgba(0, 0, 0, 0.3);
+}
+/*Adds a hover effect to the confirm button*/
+
+.button_container #confirmButton:hover {
+	background: linear-gradient(to bottom left, #FF7000 40%, #E1A807 100%);
+}
+/*Styles the confirm button when it is disabled (terms and conditions button not clicked yet)*/
+
+.button_container #confirmButton:disabled {
+	opacity: 0.3;
+}
+/*--- End of style for the confirm button ---*/
+
+/*--- Style for Footer ---*/
+
+/*Controls the style of the main footer container*/
+
+.footer {
+	padding: 20px 0;
+	line-height: 1.6;
+	background-color: #666666;
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+/*Controls the horizontal line on the footer and its colour and shape*/
+
+.footer_hr {
+	width: 100%;
+	background: #FFFFFF;
+	height: 2px;
+	border: none;
+}
+/*Style for the ricky's rides contact information within the footer */
+
+.footer__p {
+	color: #FFFFFF;
+	padding: 3px 15px;
+	display: block;
+
+	text-align: left;
+	vertical-align: middle;
+}
+/*Styles the company logo image within the footer*/
+
+.footer__img {
+	display: block;
+	margin-top: 20px;
+	float: right;
+	width: 165px;
+	cursor: pointer;
+}
+/*--- End of style for Footer ---*/
+
+/*--- Media Queries to ensure that website scales on different device views ---*/
+
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a minimum width of 896px*/
+
+@media screen and (min-width: 600px) {
+	/*Controls the width of the container of the card cards*/
+	.cards_item {
+		width: 50%;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 400px;
+		margin: auto;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a minimum width of 896px*/
+
+@media screen and (min-width: 896px) {
+	/*Controls the width of the container of the card cards*/
+	.cards_item {
+		width: 33.3333%;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		margin: auto;
+		width: 700px;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a maximum width of 600px*/
+
+@media screen and (max-width: 600px) {
+	/*Controls the display and the number of columns there are in this view - in this case, there is one as the width of each column is 100%*/
+	.column {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	/*Controls the width of the container containing the confirm and terms and conditions button/checkbox*/
+	.button_container {
+		width: 100%;
+	}
+	/*Controls the width of the body for the inputs half of the GUI*/
+	.main_content_2 {
+		width: 90%;
+	}
+	/*Controls the font size of the text on the accordions*/
+	.accordion, .accordion:after {
+		text-align: center;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the GUI and certain elements' placement and/or effects on screens that have a minimum width of 600 px and up to a maximum width of 895px*/
+
+@media screen and (min-width: 600px) and (max-width: 895px) {
+	/*Controls the width of the container containing the confirm and terms and conditions button/checkbox*/
+	.button_container {
+		width: 80%;
+	}
+	/*Controls the font size of the text on the accordions*/
+	.accordion, .accordion:after {
+		text-align: center;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a minimum width of 1000px*/
+
+@media screen and (min-width: 1000px) {
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 800px;
+		margin: auto;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a minimum width of 1350px*/
+
+@media screen and (min-width: 1350px) {
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 1000px;
+		margin: auto;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a maximum width of 500px*/
+
+@media screen and (max-width: 500px) {
+	/*Controls the margin and width of the body for the car cards half of the GUI*/
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	/*Controls the font size of the text on the accordions*/
+	.accordion, .accordion:after {
+		text-align: center;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the website and certain elements' placement and/or effects on screens that have up to a maximum width of 374px*/
+
+@media screen and (max-width: 374px) {
+	/*Controls the margin and width of the body for the car cards half of the GUI*/
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	/*Controls the width of the container of the cards*/
+	.main {
+		max-width: 1800px;
+		margin: 0 auto;
+	}
+	/*Controls the width of the images on the car cards*/
+	.card_image {
+		width: 200px;
+	}
+	/*Controls the font size of the text on the accordions*/
+	.accordion, .accordion:after {
+		font-size: 12.5px;
+		text-align: center;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the GUI and certain elements' placement and/or effects on screens that have a minimum width of 375px and up to a maximum width of 499px*/
+
+@media screen and (min-width: 375px) and (max-width: 499px) {
+	/*Controls the margin and width of the body for the car cards half of the GUI*/
+	.main_content {
+		margin: auto;
+		width: 70%;
+	}
+	/*Controls the width of the container of the extra options cards*/
+	.wrapper {
+		width: 200px;
+		margin: auto;
+	}
+	/*Controls the width of the container of the cards*/
+	.main {
+		max-width: 1300px;
+		margin: 0 auto;
+	}
+	/*Controls the width of the images on the car cards*/
+	.card_image {
+		width: 270px;
+		margin: 0 auto;
+	}
+	/*Controls the font size of the text on the accordions*/
+	.accordion, .accordion:after {
+		font-size: 19px;
+		text-align: center;
+	}
+}
+/*--- End of Media Queries ---*/

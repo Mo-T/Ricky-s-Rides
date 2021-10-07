@@ -13,11 +13,10 @@ function updateCars() {
 	document.getElementById("carOutput").innerHTML = carSelected; //Outputing to the divs in your HTML that will make the details appear on the "booking information" table
 	document.getElementById("priceOutput").innerHTML = "$" + (dailyPrice); //Outputs the daily price of the chosen vehicle to the summary table
 	updateBooking(); //Calling the next function which is the updateBooking() function
-}
-
+} //End of the function	
 function updateBooking() {
 	//This is the function called when the user enters in their reservation details and selects any extra items available
-	var addExtraItems = document.getElementsByClassName("addCheck"); 
+	var addExtraItems = document.getElementsByClassName("addCheck");
 	//This collects all my additionalitems checkboxes and stores them in an object array
 	checkedAddExtras = []; //Empty list to add the selected additional items to
 	addCost = 0; //Defining the value of the cost of the extra options as $0
@@ -45,11 +44,27 @@ function updateBooking() {
 	document.getElementById("bookingFeeOutput").innerHTML = "$" + bookingFee.toFixed(2); //Outputs the booking fee of the reservation to the summary table to two decimal places
 	document.getElementById("insuranceFeeOutput").innerHTML = "$" + (insuranceFee * numberDays).toFixed(2); //Outputs the insurance fee for the period of the reservation to the summary table to two decimal places
 	document.getElementById("totalPriceOutput").innerHTML = "$" + totalCost.toFixed(2); //Outputs the total cost of the reservation to the summary table to two decimal places
+	enterDetailInputs();
 } //End of the function
-
-function checkDetailInputs() {
+function enterDetailInputs() {
 	//This function will run once the confirm button is clicked
+	//This function will store and output the personal details of the user to the summary table
+	var firstName = document.getElementById("firstNameInput").value; //Stores the first name of the user in a variable called "firstName"
+	var lastName = document.getElementById("lastNameInput").value; //Stores the last name of the user in a variable called "lastName"
+	var emailAddress = document.getElementById("emailInput").value; //Stores the email address of the user in a variable called "emailAddress"
+	var cellphoneNumber = document.getElementById("cellphoneInput").value; //Stores the cellphone number of the user in a variable called "cellphoneNumber"
+	var userAge = document.getElementById("ageInput").value; //Stores the age of the user in a variable called "userAge"
+	var licenseNumber = document.getElementById("driversLicenseInput").value; //Stores the drivers license number of the user in a variable called "licenseNumber"
+	document.getElementById("firstNameOutput").innerHTML = firstName; //Outputs the first name of the user to the summary table
+	document.getElementById("lastNameOutput").innerHTML = lastName; //Outputs the last name of the user to the summary table
+	document.getElementById("emailAddressOutput").innerHTML = emailAddress; //Outputs the email address of the user to the summary table
+	document.getElementById("cellphoneNumberOutput").innerHTML = cellphoneNumber; //Outputs the cellphone number of the user to the summary table
+	document.getElementById("ageOutput").innerHTML = userAge; //Outputs the age of the user to the summary table
+	document.getElementById("driversLicenseNumberOutput").innerHTML = licenseNumber; //Outputs the drivers license number of the user to the summary table
+} //End of the function
+function checkAllInputs() {
 	//This function will control the error message and the validity of the information entered into each field in the GUI
+	//If any field contains invalid data, error messages that match the field of error (from below) will be displayed and the prgram will stop until the errors are fixed
 	//Checks that a car type has been selected 
 	if (carSelected == null) {
 		document.getElementById("errorMessageCarSelection").innerHTML = "Please select a car to proceed"; //If no car has been selected, this error message will be outputted to the relevant error message div that will display this message in red under the input field
@@ -89,7 +104,7 @@ function checkDetailInputs() {
 		document.getElementById("disableBookingDetails").style.border = "none"; //Red border is set to display: none, which means that it won't be seen as there is no error
 		document.getElementById("errorMessageNumberDays").innerHTML = ""; //The error message div will not display an error message - empty div as there is no error
 		document.getElementById("closeBookingDetails").style.maxHeight = null; //Closes the booking details accordion after confirm button is clicked 
-	}//End of this if statement
+	} //End of this if statement
 	//Checks that a valid pickup location has been entered/selected
 	if (document.getElementById("pickUpLocationSelect").value == "") {
 		document.getElementById("errorMessagePickupLocation").innerHTML = "Please select a pickup location for your chosen car"; //If no pickup location is selected, this error message will be outputted to the relevant error message div tha will display it in red under the input field
@@ -116,24 +131,12 @@ function checkDetailInputs() {
 		document.getElementById("closeBookingDetails").style.maxHeight = null; //These three statements will close the other accordions so that only the invalid accordion will be open
 		document.getElementById("closeCustomerDetails").style.maxHeight = null;
 		document.getElementById("panel_extras").style.maxHeight = null;
-		return;  //Forces the user to enter a valid drop off location - function will stop running until the error is fixed
+		return; //Forces the user to enter a valid drop off location - function will stop running until the error is fixed
 	} else { //If a valid drop off location is selected, this segment of the if statement will run
 		document.getElementById("disableLocationDetails").style.border = "none"; //Sets the display for the red border to none - the border will not be displayed
 		document.getElementById("errorMessageDropOffLocation").innerHTML = ""; //Sets the display for the error message to none - error message will not be displayed
 		document.getElementById("closeLocationDetails").style.maxHeight = null; //The corresponding accordion will close once confirm button is clicked if all input fields are valid
 	} //End of this if statement
-	var firstName = document.getElementById("firstNameInput").value; //Stores the first name of the user in a variable called "firstName"
-	var lastName = document.getElementById("lastNameInput").value; //Stores the last name of the user in a variable called "lastName"
-	var emailAddress = document.getElementById("emailInput").value; //Stores the email address of the user in a variable called "emailAddress"
-	var cellphoneNumber = document.getElementById("cellphoneInput").value; //Stores the cellphone number of the user in a variable called "cellphoneNumber"
-	var userAge = document.getElementById("ageInput").value; //Stores the age of the user in a variable called "userAge"
-	var licenseNumber = document.getElementById("driversLicenseInput").value; //Stores the drivers license number of the user in a variable called "licenseNumber"
-	document.getElementById("firstNameOutput").innerHTML = firstName; //Outputs the first name of the user to the summary table
-	document.getElementById("lastNameOutput").innerHTML = lastName; //Outputs the last name of the user to the summary table
-	document.getElementById("emailAddressOutput").innerHTML = emailAddress; //Outputs the email address of the user to the summary table
-	document.getElementById("cellphoneNumberOutput").innerHTML = cellphoneNumber; //Outputs the cellphone number of the user to the summary table
-	document.getElementById("ageOutput").innerHTML = userAge; //Outputs the age of the user to the summary table
-	document.getElementById("driversLicenseNumberOutput").innerHTML = licenseNumber; //Outputs the drivers license number of the user to the summary table
 	//Checks that a valid first name has been entered
 	if (document.getElementById("firstNameInput").validity.patternMismatch || document.getElementById("firstNameInput").validity.valueMissing || document.getElementById("firstNameInput") == "") {
 		document.getElementById("errorMessageFirstName").innerHTML = "Please enter in a valid first name (no numbers)"; //If an invalid first name has been entered, this error message will be outputted to the corresponding div that will display it in red under the input field
@@ -155,9 +158,9 @@ function checkDetailInputs() {
 		document.getElementById("errorMessageLastName").innerHTML = "Please enter in a valid last name (no numbers)"; //If an invalid last name has been entered, this error message will be outputted to the corresponding div that will display it in red under the input field
 		document.getElementById("errorMessageAccordions").innerHTML = "Error in Step 5 - Please enter valid details in all fields and follow the requested format"; //Alerts the user that there is an error in the step 5 accordion
 		window.scrollTo(0, document.getElementById("accordionWindowScroll").offsetTop - 39); //Window scroll scrolls the page to the location of the accordions
-		document.getElementById("disableCustomerDetails").style.border = "4px solid red";  //Displays a red border around the accordion that contains the error
+		document.getElementById("disableCustomerDetails").style.border = "4px solid red"; //Displays a red border around the accordion that contains the error
 		document.getElementById("closeCustomerDetails").style.maxHeight = document.getElementById("closeCustomerDetails").scrollHeight + "px"; //Opens the customer details accoridon containing the error
-		document.getElementById("closeBookingDetails").style.maxHeight = null;  //These three statements close the other accordions so that only the customer details accordion is open when invalid
+		document.getElementById("closeBookingDetails").style.maxHeight = null; //These three statements close the other accordions so that only the customer details accordion is open when invalid
 		document.getElementById("closeLocationDetails").style.maxHeight = null;
 		document.getElementById("panel_extras").style.maxHeight = null;
 		return; //Forces the user to enter a valid last name - function will stop running until the error is fixed
@@ -171,7 +174,7 @@ function checkDetailInputs() {
 		document.getElementById("errorMessageEmailAddress").innerHTML = "Please enter in a valid email address following the requested format"; //If the email address is invalid, this error message will be outputted to the corresponding div that will display it in red under the input field
 		window.scrollTo(0, document.getElementById("accordionWindowScroll").offsetTop - 39); //Window scroll scrolls the page to the location of the accordions
 		document.getElementById("errorMessageAccordions").innerHTML = "Error in Step 5 - Please enter valid details in all fields and follow the requested format"; //Alerts the user that there is an error in the step 5 accordion
-		document.getElementById("disableCustomerDetails").style.border = "4px solid red";  //Displays a red border around the accordion that contains the error
+		document.getElementById("disableCustomerDetails").style.border = "4px solid red"; //Displays a red border around the accordion that contains the error
 		document.getElementById("closeCustomerDetails").style.maxHeight = document.getElementById("closeCustomerDetails").scrollHeight + "px"; //Opens the customer details accoridon containing the error
 		document.getElementById("closeBookingDetails").style.maxHeight = null; //These three statements close the other accordions so that only the customer details accordion is open when invalid
 		document.getElementById("closeLocationDetails").style.maxHeight = null;
@@ -210,7 +213,7 @@ function checkDetailInputs() {
 		document.getElementById("panel_extras").style.maxHeight = null;
 		return; //Forces the user to enter a valid age - function will stop running until the error is fixed
 	} else { //If the age entered is invalid, this segment of the if statement will run
-		document.getElementById("disableCustomerDetails").style.border = "none";  //Sets the display for the red border to none - the border will not be displayed
+		document.getElementById("disableCustomerDetails").style.border = "none"; //Sets the display for the red border to none - the border will not be displayed
 		document.getElementById("errorMessageAge").innerHTML = ""; //Sets the display for the error message to none - error message will not be displayed
 		document.getElementById("closeCustomerDetails").style.maxHeight = null; //The customer details accordion will close once confirm button is clicked if all input fields are 
 	} //End of this if statement
@@ -230,28 +233,28 @@ function checkDetailInputs() {
 		document.getElementById("errorMessageDriversLicense").innerHTML = ""; //Sets the display for the error message to none - error message will not be displayed
 		document.getElementById("closeCustomerDetails").style.maxHeight = null; //The customer details accordion will close once confirm button is clicked if all input fields are 
 	} //End of this if statement
-	pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, licenseNumber); //Calls the pushData function and pushes the variables containing the users details to this function
+	pushData(); //Calls the pushData function that will push data to firebase
 } //End of the function
-
-function pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, licenseNumber) {
+function pushData() {
 	//This function is responsible for the creation of a JSON file containing all of the users reservation details that will be pushed to a Firebase database
 	//Creating the link to Firebase and pushing to the booking node
 	var database = firebase.database(); //Connecting to database
 	var reservationsRef = database.ref('reservations'); //Creating a reference to this node in the databse called 'reservations'
 	var reservations = { //Creating a JSON file to be sent over the web
 		//Creating a key pair for the variables 
-		First_name: firstName, //First_Name will be the name of the field in the database 
-		Last_name: lastName, //Last_name will be the name of the field in the database 
-		Age: userAge, //Age will be the name of the field in the database 
-		Phone_number: cellphoneNumber, //Phone_number will be the name of the field in the database 
-		Email_address: emailAddress, //Email_address will be the name of the field in the database 
-		Drivers_License_Number: licenseNumber, //Drivers_License_Number will be the name of the field in the database 
+		First_name: document.getElementById("firstNameInput").value, //First_Name will be the name of the field in the database 
+		Last_name: document.getElementById("lastNameInput").value, //Last_name will be the name of the field in the database 
+		Age: document.getElementById("ageInput").value, //Age will be the name of the field in the database 
+		Phone_number: document.getElementById("cellphoneInput").value, //Phone_number will be the name of the field in the database 
+		Email_address: document.getElementById("emailInput").value, //Email_address will be the name of the field in the database 
+		Drivers_License_Number: document.getElementById("driversLicenseInput").value, //Drivers_License_Number will be the name of the field in the database 
 		Selected_Car: carSelected, //Selected_Car will be the name of the field in the database 
 		Check_In_Date: document.getElementById("checkInDate").value, //Check_In_Date will be the name of the field in the database 
 		Number_of_Days: document.getElementById("numberDays").value, //Number_of_Days will be the name of the field in the database 
-		Drop_Off_Location: document.getElementById("dropOffLocationSelect").value, //First_Name will be the name of the field in the database 
+		Drop_Off_Location: document.getElementById("dropOffLocationSelect").value, //Drop_Off_Location will be the name of the field in the database 
 		Pickup_Location: document.getElementById("pickUpLocationSelect").value, //Drop_Off_Location will be the name of the field in the database 
-		Extras: checkedAddExtras, //First_Name will be the name of the field in the database 
+		Extras: checkedAddExtras, //Extras will be the name of the field in the database 
+		Daily_Price: "$" + dailyPrice, // Daily_Price will be the name of the field in the database
 		Extras_Cost: "$" + addCost, //Extras_Cost will be the name of the field in the database 
 		Insurance_Fee: "$" + insuranceFee, //Insurance_Fee will be the name of the field in the database 
 		Booking_Fee: "$" + bookingFee, //Booking_Fee will be the name of the field in the database 
@@ -260,9 +263,9 @@ function pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, l
 	reservationsRef.push(reservations); //Pushing the JSON file to the database
 	window.scrollTo(0, document.getElementById("bookingInformation").offsetTop - 29);
 	document.getElementById('confirmOverlay').style.height = "100%"; //Displays the confirm overlay that confirms that the users details have been pushed to their email (firebase)
-	setTimeout(function() { //Sets a timer of 10 seconds and will refresh the page 
+	setTimeout(function() { //Sets a timer of 5 seconds and will refresh the page 
 		location.reload(); //Reloads the page
-	}, 10000); //10 second timer
+	}, 5000); //5 second timer
 } //End of function
 //Creating new variables to check the date select is only a present date 
 var today = new Date(); //Creates a new date function
@@ -277,7 +280,6 @@ if (mm < 10) { //If the month is less than 10, it wll be displayed in the format
 }
 today = yyyy + '-' + mm + '-' + dd; //Combines the day, month and year to create the date and stores it in the today variable
 document.getElementById("checkInDate").setAttribute("min", today); //Connects the date function to the date input in the HTML
-
 var acc = document.getElementsByClassName("accordion"); //Creates a new variable for the accordions
 for (var i = 0; i < acc.length; i++) { //For loop that will make changes to the accordions as they are clicked on
 	acc[i].addEventListener("click", function() { //Event listener that waits until an accordion is clicked
@@ -285,7 +287,7 @@ for (var i = 0; i < acc.length; i++) { //For loop that will make changes to the 
 		var panel = this.nextElementSibling; //Creates a new variable called panel which controls the display
 		if (panel.style.maxHeight) {
 			panel.style.maxHeight = null; //Accordion is close and contents are hidden
-		} else { 
+		} else {
 			panel.style.maxHeight = panel.scrollHeight + "px"; //Accordion is open and contents are displayed
 		}
 	});
@@ -296,7 +298,7 @@ for (i = 0; i < carInputs.length; i++) { //For loop that checks for the selectio
 	carInputs[i].addEventListener('click', updateCars); //When a car is clicked on, the updateCars() function will run
 } //End of car selection for loop
 //Event listener for when a user selects number of days/dates/extras is clicked
-var allExtraInputs = document.getElementsByClassName("addCheck"); 
+var allExtraInputs = document.getElementsByClassName("addCheck");
 for (i = 0; i < allExtraInputs.length; i++) { //For loop to check for the selection of number of days/dates/extras
 	allExtraInputs[i].addEventListener('input', updateBooking); //When a number of days/dates/extras are inputted/selected, the updateBooking() function will run
 } //End of the number of days/dates/extras for loop
@@ -308,5 +310,5 @@ document.getElementById('checkButton').addEventListener('click', function() {
 });
 //Event listener for confirm button - once clicked, the checDetailInputs() will run
 document.getElementById("confirmButton").addEventListener('click', function() {
-	checkDetailInputs(); //When the confirm button is enabled and is clicked, the checkDetailInputs() function will run
+	checkAllInputs(); //When the confirm button is enabled and is clicked, the checkAllInputs() function will run
 });

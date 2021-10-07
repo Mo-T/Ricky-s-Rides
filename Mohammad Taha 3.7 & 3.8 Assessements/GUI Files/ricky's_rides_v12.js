@@ -174,6 +174,15 @@ function checkDetailInputs() {
 		document.getElementById("disableCustomerDetails").style.border = "none";
 		document.getElementById("errorMessageDriversLicense").style.display = "none";
 	}
+	
+//	if (document.getElementById("firstNameInput") == false || document.getElementById("lastNameInput") == false || document.getElementById("ageInput") == false || document.getElementById("cellphoneInput") == false || document.getElementById("driversLicenseInput") == false || document.getElementById("emailInput") == false) {
+//		document.getElementById("closeCustomerDetails").style.maxHeight = document.getElementById("closeCustomerDetails").scrollHeight + "px";
+//		document.getElementById("closeBookingDetails").style.maxHeight = null;
+//		document.getElementById("closeLocationDetails").style.maxHeight = null;
+//		document.getElementById("panel_extras").style.maxHeight = null;
+//} else {
+//	document.getElementById("closeCustomerDetails").style.maxHeight = null;
+//}	
 	pushData(firstName, lastName, emailAddress, cellphoneNumber, userAge, licenseNumber);
 }
 
