@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Setting the language in the document to English-->
+<head>
+	<!-- Beginning of head tag-->
+	<meta charset="utf-8">
+	<title>Ricky's Rides</title><!--The title of the page - what appears on the tab-->
+	<meta content="width=device-width, initial-scale=1" name="viewport"><!-- Allows for elements on the page to scale-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!-- Link that provides the connections for icons displayed on the page-->
+	<link href="ricky's_rides_v9.css" rel="stylesheet" type="text/css"><!-- This creates the link between this HTML document and the CSS stylesheet that controls aesthetics and style-->
+	<link href="../Images/ricky's_rides_logo_footer.png" rel="shortcut icon" sizes="20x20"><!--Code for inserting a favicon on the tab-->
+</head><!-- End of head tag-->
+<body>
+	<!--Beginning of body tag which will contain all of the content on the GUI-->
+	<nav>
+		<!-- Navbar that is displayed on the top of the page-->
+		<img alt="Ricky's Rides Logo" class="nav_logo" height="100" src="../Images/Ricky's_Rides_Transparent_Logo.png" title="Ricky's Rides Logo" width="150"> <!-- Inserts an image of ricky's rides which is the logo of the rental company - sits inside of the navbar on the left-->
+	</nav><!-- End of nav-->
+	<div class="parallax_effect" title="New car on the road"></div><!-- A div that contains a parllax effect - image is provided in the CSS-->
+	<h1>Select Your Car</h1><!-- Heading 1 title tag - displayed under the parallax effect-->
+	<div class="main_content">
+		<!-- Div that will contain the width and style of the container that the car cards sit in-->
+		<div class="main">
+			<!-- Div that will be styled as the container of the car cards-->
+			<ul class="cards">
+				<!-- Unordered list containing all of car cards-->
+				<!-- Car card number one - Nissan Caravan -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Nissan Caravan" data-price="89.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Nissan Caravan" src="../Images/Nissan_Caravan.PNG" title="Nissan Caravan"></div><!-- Sourcing the image of the car and storing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Nissan Caravan</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Nissan Caravan-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 10 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> Minivan</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 2 Large, 4 Small</p>
+									<p><strong>Engine Size:</strong> 2.0 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 10 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Nissan Caravan"><strong>Select Car - $89/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+				<!-- Car card number two - Toyota Estima -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Toyota Estima" data-price="62.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Toyota Estima" src="../Images/Toyota_Estima.PNG" title="Toyota Estima"></div><!-- Sourcing the image of the car and storing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Toyota Estima</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Toyota Estima-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 8 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> People Mover</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 3 Large, 2 Small</p>
+									<p><strong>Engine Size:</strong> 2.4 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 9.51 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol Unleaded 91</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Toyota Estima"><strong>Select Car - $62/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				<!-- Card card number six - Holden Trax -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Holden Trax" data-price="41.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Holden Trax" src="../Images/holden_trax.png" title="Holden Trax"></div><!-- Sourcing the image of the car and stroing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Holden Trax</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Holden Trax-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 5 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> Compact SUV</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 1 Large, 2 Small</p>
+									<p><strong>Engine Size:</strong> 1.4 - 1.8 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 6.9 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Holden Trax"><strong>Select Car - $41/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+				</li><!--End of the first card - item in the list-->
+				<!-- Car card number three - Suzuki Swift -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Suzuki Swift" data-price="18.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Suzuki Swift" src="../Images/Suzuki_Swift.PNG" title="Suzuki Swift"></div><!-- Sourcing the image of the car and stroing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Suzuki Swift</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Suzuki Swift-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 5 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> 5 Door Hatch</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 1 Large, 1 Small</p>
+									<p><strong>Engine Size:</strong> 1.2 - 1.4 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 6 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Suzuki Swift"><strong>Select Car - $18/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+				<!-- Car card number five - Mazda 3 -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Mazda 3" data-price="23.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Mazda 3" src="../Images/Mazda_3.PNG" title="Mazda 3"></div><!-- Sourcing the image of the car and storing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Mazda 3</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Mazda 3-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 5 & Seatbelts</p>
+									<p><strong>Body Style:</strong> 5-Door Hatch or Wagon</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Luggage:</strong> 2 Large, 1 Small</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Engine Size:</strong> 1.6 - 2.0 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 6 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Mazda 3"><strong>Select Car - $23/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+				<!-- Car card number four - Nissan Tiida -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Nissan Tiida" data-price="18.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Nissan Tiida" src="../Images/Nissan_Tiida.PNG" title="Nissan Tiida"></div><!-- Sourcing the image of the car and storing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Nissan Tiida</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Nissan Tiida -->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 5 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> 4 Door Sedan / 5 Door Hatch</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 1 Large, 2 Small</p>
+									<p><strong>Engine Size:</strong> 1.3 - 2.0 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 7 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Nissan Tiida"><strong>Select Car - $18/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+				<!-- Car card number seven - Holden Captiva -->
+				<li class="cards_item">
+					<!--Setting the card like an itemised list so that it is easy to style-->
+					<div class="card">
+						<!--Div that will be styled as a contaainer to be the base of the card-->
+						<div class="carCard" data-name="Holden Captiva" data-price="52.00">
+							<!-- Giving the car cards a class, name and a price that will be used in the JS file to calculate the cost of the reservation-->
+							<div class="card_image"><img alt="Holden Captiva" src="../Images/holden_captiva.png" title="Holden Captiva"></div><!-- Sourcing the image of the car and stroing it inside a div tag-->
+							<div class="card_content">
+								<!-- Contains main content of the card-->
+								<h1 class="card_title">Holden Captiva</h1><!-- Displaying the name of the car under the image in a Heading 1 tag - Holden Captiva-->
+								<div class="card_text">
+									<!-- Div that will contain the information about the car-->
+									<p><strong>Seats:</strong> 5 & Seatbelts</p><!-- The next 7 lines of code are the information of the car, in paragraph tags-->
+									<p><strong>Body Style:</strong> 4 Door SUV</p><!--Strong tags to bold certain/important words for the user to recognise-->
+									<p><strong>Luggage:</strong> 3 Large, 1 Small</p>
+									<p><strong>Engine Size:</strong> 3 Litre</p>
+									<p><strong>Fuel Usage:</strong> ± 9.2 L / 100km</p>
+									<p><strong>Fuel Type:</strong> Petrol</p>
+									<p><strong>Transmission:</strong> Automatic</p>
+								</div><button class="btn card_btn" title="Select Holden Captiva"><strong>Select Car - $52/day</strong></button> <!-- Button that could be used to select a car - also contains the price of the car so that the user knows what they are selecting-->
+							</div>
+						</div>
+					</div><!-- End of the div tags defined above-->
+				</li><!--End of the first card - item in the list-->
+			</ul>
+		</div>
+	</div><br>
+	<!-- Break tag that seperate elements by space -->
+	<div class="errorMessagesCarCards" id="errorMessageCarSelection"></div><!-- Div that will contain the error message alerting the user to select a car if they have not before proceeding with the reseration --><br>
+	<!-- Break tags that seeperate elements - car cards and the accordions below -->
+	<br>
+	<div class="main_content_2">
+		<!-- Div tag that will style the width and position of the elements below -->
+		<br>
+		<!-- Break tag seperating elements -->
+		<div id="accordionWindowScroll">
+			<!-- Div tag containing an id that will be called in the JS for the page to scroll to should there be an error in the entered information -->
+			<button class="accordion reservationDetails" id="disableBookingDetails" title="Reservation Period"><strong>Step 2 -</strong> Select Your Reservation Period</button> <!-- Accordion number one - coded as a button so that the user can click it to open it and see its content -->
+			<div class="panel" id="closeBookingDetails">
+				<!-- Div that will conntrol the display of the contents within the accordion and the events that happen after the accordion button is clicked-->
+				<br>
+				<!-- Break tag seperating the accordion button and the inputs below-->
+				 <label><strong>Check in Date:</strong></label> <input class="dateInput" id="checkInDate" name="checkIn" onchange="updateBooking()" required="" type="date"> <!-- This is a date input and allows the user to enter a check in date for their reservation - this field is set to required to force the user to select a date-->
+				<div class="errorMessages" id="errorMessageDate1"></div><!-- Div that will display an error message if no date or an invalid date is selected/entered into the field - sits under the input--><br>
+				<!-- Break tags seperating the check in date input and the number of days input below-->
+				<br>
+				<label><strong>Number of Days:</strong></label> <input id="numberDays" max="21" min="1" oninput="updateBooking()" placeholder="1-21" required="" title="Please enter the number of days you will reserve your chosen car for" type="number"> <!-- This is the number of days input which is a number field - the user will need to select the number of days that they plan to rent their chosen car - set to requird to force the user to select a number of days-->
+				<div class="errorMessages" id="errorMessageNumberDays"></div><!-- Div that will display an error message if the user has enetered an invalid number of days or no number of days - sits under the input--><br>
+				<br>
+				<!-- Break tags seperating the inputs above from the next accordion button below-->
+			</div><!-- Closing tag of the accordion - this is the end of the frist accordion button --><br>
+			<button class="accordion" id="disableLocationDetails" title="Pickup/Drop Off location selection"><strong>Step 3 -</strong> Select Your Location</button> <!-- Accordion number two - Will contain inputs for pickup and drop off locations - set as a button for the user to click -->
+			<div class="panel" id="closeLocationDetails">
+				<!-- Div that will conntrol the display of the contents within the accordion and the events that happen after the accordion button is clicked-->
+				<br>
+				<label for="pickUpLocationSelect">Pickup Location</label><!--Label that will contain the name of the select box--> <select id="pickUpLocationSelect" name="pickUpLocationSelect" onchange="updateBooking()" required="">
+					<!-- Creating a select dropdown menu/box that will contain the available pickup location-->
+					<option disabled selected style="display: none" value="">
+						<!--Initial value selected is "- Pickup Location - " - this is disabled and has no value as it is an invalid location and is only there to alert the user that this input is for pickup location selection-->
+						 - Pickup Location -
+					</option>
+					<option value="Ricky's Rides Depot">
+						<!--Option number 1 which is ricky's rides depot - value will be called in JS to validate-->
+						 Ricky’s Rides Depot (2 Arthur Street)
+					</option>
+					<option value="Dunedin Airport">
+						<!--Option number 2 which is dunedin airport - has a value that will be called in JS to validate-->
+						 Dunedin Airport
+					</option>
+				</select> <!--End of the select dropdown menu/box--><br>
+				<div class="errorMessages" id="errorMessagePickupLocation"></div><!--Div that will display an error message in case the user does not select a valid pickup location--><br>
+				<br>
+				<label for="dropOffLocationSelect">Drop Off Location</label><!--Label that will contain the name of the select box--><select id="dropOffLocationSelect" name="dropOffLocationSelect" onchange="updateBooking()" required="">
+					<!-- Creating a select dropdown menu/box that will contain the available drop off location-->
+					<option disabled selected style="display: none" value="">
+						<!--Initial value selected is "- Drop Off Location - " - this is disabled and has no value as it is an invalid location and is only there to alert the user that this input is for drop off location selection-->
+						 - Drop Off Location -
+					</option>
+					<option value="Same as Pickup Location">
+						<!-- Option number 1 which is the "same as pickup location" - value that will be called in JS to validate -->
+						 Same as Pickup Location
+					</option>
+					<option value="Ricky's Rides Depot">
+						<!-- Option number 2 which is ricky's rides depot - value that will be called in JS to validate-->
+						 Ricky’s Rides Depot (2 Arthur Street)
+					</option>
+					<option value="Dunedin Airport">
+						<!-- Option number 3 which is dunedin airport - value that will be called in JS to validate -->
+						 Dunedin Airport
+					</option>
+				</select><!-- End of the drop off location select menu/box --><br>
+				<div class="errorMessages" id="errorMessageDropOffLocation">
+					<!--Div that will display an error message in case the user does not select a valid drop off location-->
+				</div><br>
+			</div><!-- Closing tag of the accordion - this is the end of the second accordion button --><br>
+			<button class="accordion extraDetails" id="disableExtraDetails" title="Select any extra options"><strong>Step 4 -</strong> Select Extra Options For Your Car</button><!-- Accordion number three - Will contain inputs the extra options available for purchase - set as a button for the user to click -->
+			<div class="panel" id="panel_extras">
+				<!-- Div that will conntrol the display of the contents within the accordion and the events that happen after the accordion button is clicked-->
+				<br>
+				<p>Take the opportunity to add these extras to your booking:</p><!-- Statement that encourages the user to select one of the extra options-->
+				<!--Inputs for the extra options details-->
+				<div class="wrapper">
+					<div class="extras_container">
+						<!--Creates a container that will contain all of the extra options cards-->
+						<label class="option_item" title="Select Snow Chains"><input class="checkbox addCheck" data-price="60" type="checkbox" value="Snow Chains"> <span class="option_inner extras"><span class="tickmark"></span> <span class="icon"><i class="fa fa-snowflake-o"></i></span><br>
+						<span class="name">Snow Chains - $60</span></span></label> <label class="option_item" title="Select Child Booster Seat"><input class="checkbox addCheck" data-price="50" type="checkbox" value="Child Booster Seat"> <span class="option_inner extras"><span class="tickmark"></span> <span class="icon"><i class="fa fa-baby"></i></span><br>
+						<span class="name">Child Booster Seat (9kg -36kg) - $50</span></span></label> <label class="option_item" title="Select Roof Racks"><input class="checkbox addCheck" data-price="90" type="checkbox" value="Roof Racks"> <span class="option_inner extras"><span class="tickmark"></span> <span class="icon"><i class="fa fa-road"></i></span><br>
+						<span class="name">Roof Racks - $90</span></span></label> <label class="option_item" title="Select Bike Racks"><input class="checkbox addCheck" data-price="120" type="checkbox" value="Bike Racks"> <span class="option_inner extras"><span class="tickmark"></span> <span class="icon"><i class="fa fa-bicycle"></i></span><br>
+						<span class="name">Bike Racks (fits max 3 bikes) - $120</span></span></label> <label class="option_item" title="Select GPS"><input class="checkbox addCheck" data-price="35" type="checkbox" value="GPS"> <span class="option_inner extras"><span class="tickmark"></span> <span class="icon"><i class="fa fa-map"></i></span><br>
+						<span class="name">GPS - $35</span></span></label>
+					</div><!--End of the card container-->
+				</div>
+			</div><!-- Closing tag of the accordion - this is the end of the third accordion button --><br>
+			<!--inputs for cutomer details-->
+			 <button class="accordion" id="disableCustomerDetails" title="Personal Details"><strong>Step 5 -</strong> Enter Your Personal Details</button><!-- Accordion number four - Will contain inputs of the personal details of the user - set as a button for the user to click -->
+			<div class="panel" id="closeCustomerDetails">
+				<!-- Div that will conntrol the display of the contents within the accordion and the events that happen after the accordion button is clicked-->
+				<br>
+				<label><strong>First Name</strong></label> <input autocomplete="on" id="firstNameInput" oninput="enterDetailInputs()" pattern="[A-Za-z'-]{2,30}" placeholder="John" required="" title="Please enter in your first name" type="text"> <!-- Firt name input field that allows the user to enter a first name (letters only) -->
+				<div class="errorMessages" id="errorMessageFirstName"></div><!--Div that will display an error message if the first name that is entered is invalid--><br>
+				<br>
+				<label><strong>Last Name</strong></label> <input autocomplete="on" id="lastNameInput" oninput="enterDetailInputs()" pattern="[A-Za-z'-]{2,30}" placeholder="Smith" required="" title="Pleas enter in your last name" type="text"><!--Last name input that allows the user to enter a last name (letters only)-->
+				<div class="errorMessages" id="errorMessageLastName"></div><!--Div that will display an error message if the last name that is entered is invalid--><br>
+				<br>
+				<label><strong>Email Address</strong></label> <input autocomplete="on" id="emailInput" oninput="enterDetailInputs()" placeholder="johnsmith@gmail.com" required="" title="Please enter in your email address" type="email"><!--Email address input field that allows the user to enter an email address-->
+				<div class="errorMessages" id="errorMessageEmailAddress"></div><!--Div that will display an error message if the email address entered is invalid--><br>
+				<br>
+				<label><strong>Cellphone Number</strong></label> <input autocomplete="on" id="cellphoneInput" oninput="enterDetailInputs()" pattern="02[0-9]\d{6,9}" placeholder="02534478175" required="" title="Please enter in your cellphone number" type="tel"><!--Cellphone number input field that allows the user to enter a cellphone number (numbers only)-->
+				<div class="errorMessages" id="errorMessageCellNumber"></div><!--Div that will display an error if an invalid cellphone number is entered --><br>
+				<br>
+				<label><strong>Age</strong></label> <input autocomplete="on" id="ageInput" max="80" min="25" oninput="enterDetailInputs()" placeholder="25-80" required="" title="Please enter in your age" type="number"><!--Age input field that allows the user to select their age (must be between 25 and 80 years old to proceed)-->
+				<div class="errorMessages" id="errorMessageAge"></div><!--Div that will display an error message if an invalid age is entered --><br>
+				<br>
+				<label><strong>NZ Drivers License Number</strong></label> <input autocomplete="on" id="driversLicenseInput" oninput="enterDetailInputs()" pattern="[A-Z]{2}[0-9]{6}" placeholder="NZ123456" required="" title="Please enter in your NZ drivers license number - found on the back of our drivers license"><!--Drivers license number input field that allows the user to enter their drivers license number (2 letters followed by 6 numbers)-->
+				<div class="errorMessages" id="errorMessageDriversLicense"></div><!--Div that will display an error message if an invalid drivers license number is entered--><br>
+				<br>
+				<label></label> <!-- Empty label tag-->
+				<div class="comments_title">
+					<!--Div containing the title of the comments input field so that it can be styled like the other labels-->
+					<label><strong>Comments</strong></label>
+				</div>
+				<textarea id="extraCommentsInput" maxlength="350" oninput="enterDetailInputs()" placeholder="Please enter any additional information here"></textarea><!--Comments input field that allows the user to enter any other comments about the reservation or other relevant information --><br>
+				<div class="errorMessages" id="textarea_message">
+					<!--Div that contains an always displayed message under the input field, alerting the user that the max number of characters is 350-->
+					Max Characters: 350
+				</div><br>
+				<!--Break tags that seperate the fourth accordion from the error message that will be displayed if any invalid data is detected in the accordions-->
+				<br>
+			</div><br>
+			<div class="errorMessagesCarCards" id="errorMessageAccordions"></div><!--Div that will display an error message if any invalid inputs are detected in any of the accordions-->
+		</div><!-- Closing tag of the accordion - this is the end of the fourth accordion button --><br>
+		<!--Break tags that sperate the fourth accordion from the summary table below-->
+		<h1 id="reservationInformation">Reservation Information</h1><!-- Heading 1 tag which creates a title that will sit above the table below-->
+		<table>
+			<!--Creating a summary table that will contain the outputted information about the reservation details that the user has entered-->
+			<thead>
+				<!--Creating a header for the table where the titles for each column will sit-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Car Information</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+			</thead><!-- End of the table header-->
+			<tbody>
+				<!--Creating a body that will contain all of the outputs and their corresponding names-->
+				<tr>
+					<!--Row that contains the output of the car selected by the user-->
+					<td>Selected Car</td><!--First cell containing the name of the output (selected car ) -->
+					<td>
+						<div id="carOutput">
+							<!-- Second cell containing the output of the selected car -->
+							-
+						</div>
+					</td>
+				</tr><!--End of the selected car row-->
+				<tr>
+					<!--Row that contains the output of the cars price per day-->
+					<td>Price Per Day</td><!--First cell containing the name of the output (price per day)-->
+					<td>
+						<div id="priceOutput">
+							<!--Second cell that contains the output of the price per day of the selected car -->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the price per day row-->
+				<tr>
+					<!--Row that contains the output of the total cost of the car selected by the user-->
+					<td>Total Car Cost</td><!--First cell containing the name of the output (Total Car Cost) -->
+					<td>
+						<div id="totalCarCostOutput">
+							<!--Second cell containing the output of the total cost of the car selected by the user-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the total cost of the car row-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Reservation Period</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+				<tr>
+					<!-- Row that contains the ouput of the selected check in date of teh reservation -->
+					<td>Check In Date</td><!--First cell containing the name of the output (check in date)-->
+					<td>
+						<div id="checkInDateOutput">
+							<!--Second cell containing the output of the users selected date for the reservation -->
+							-
+						</div>
+					</td>
+				</tr><!--End of the check in daterow-->
+				<tr>
+					<!--Row that contains the output for the number of days the selected car is rented for -->
+					<td>Number of Days</td><!--First cell containing the name of the output (number of days) -->
+					<td>
+						<div id="dayOutput">
+							<!--Second cell containing the output of the selected number of days for the reservation of the selected car-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the number of days row-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Location Details</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+				<tr>
+					<!--Row that contains the output of the pickup location of the selected car -->
+					<td>Pick Up Location</td><!--First cell containing the name of the output ("pickup location")-->
+					<td>
+						<div id="pickUpLocationOutput">
+							<!--Second cell containing the output of the pickup location selected by the user-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the pickup location row-->
+				<tr>
+					<!--Row that contains the output of the drop off location of the selected car -->
+					<td>Drop Off Location</td><!--First cell containing the name of the output (drop off location)-->
+					<td>
+						<div id="dropOffLocationOutput">
+							<!--Second cell containing the output of the drop off location selected by the user-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the drop off location row-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Extras Options</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+				<tr>
+					<!--Row that contains the output of the extra options selected by the user-->
+					<td>Extras</td><!--First cell containing the name of the output (Extras) -->
+					<td>
+						<div id="extrasOutput">
+							<!--Second cell containing the output of the extra options selected by the user-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the extra row-->
+				<tr>
+					<!--Row that contains the output of the total price of the extra options selected-->
+					<td>Extras Total Price</td><!--First cell containing the name of the output (Extras total price) -->
+					<td>
+						<div id="extrasPriceOutput">
+							<!--Second cell containing the output of the total price of the extra options selected -->
+							-
+						</div>
+					</td>
+				</tr><!--End of the extras total price row-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Personal Details</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+				<tr>
+					<!--Row that will contain the first name ouput-->
+					<td>First Name</td><!-- First cell containing the name-->
+					<td>
+						<!-- Second cell containing the output of the users first name-->
+						<div id="firstNameOutput">
+							-
+						</div>
+					</td>
+				</tr><!-- End of the first name row-->
+				<tr>
+					<!--Creating a row that will contain the output of the users last name they entered-->
+					<td>Last Name</td><!-- First cell containing the name-->
+					<td>
+						<div id="lastNameOutput">
+							<!--Second cell containing the output of the users last name-->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the last name row-->
+				<tr>
+					<!--Row that will contain the output of the users email address-->
+					<td>Email Address</td><!--First cell containing the name (email address)-->
+					<td>
+						<div id="emailAddressOutput">
+							<!--Second cell containing the output of the users email address-->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the email address row-->
+				<tr>
+					<!-- Row that will contain the output of the users cellphone number-->
+					<td>Cellphone Number</td><!--First cell containing the name (cellphone number)-->
+					<td>
+						<div id="cellphoneNumberOutput">
+							<!--Second cell containing the output of the users cellphone number-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the cellphone number row-->
+				<tr>
+					<!--Row that contains the users age-->
+					<td>Age</td><!--First cell that contains the name of the output (Age)-->
+					<td>
+						<div id="ageOutput">
+							<!-- Second cell that contains the output of the users age -->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the age row-->
+				<tr>
+					<!--Row that will contain the output of the users drivers license number-->
+					<td>Drivers License Number</td><!--First cell that contains the name of the output (drivers license number)-->
+					<td>
+						<div id="driversLicenseNumberOutput">
+							<!-- Second cell containing the output of the users drivers license number-->
+							-
+						</div>
+					</td>
+				</tr><!--End of the drivers license number row-->
+				<tr>
+					<!--Creating a row that will contain the output of the users comments-->
+					<td>Extra Comments</td><!-- First cell containing the name of the output (Extra Comments)-->
+					<td>
+						<div id="extraCommentsOutput">
+							<!--Second cell containing the output of the users comments-->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the extra comments row-->
+				<tr>
+					<!--Defines a row that will contain the titles of the table-->
+					<th colspan="2">Price Details</th><!-- One column will contain the the type of outputs-->
+				</tr><!-- End of the title row-->
+				<tr>
+					<!--Row containing the booking fee of the reservation-->
+					<td>Booking Fee</td><!-- First cell containing the name of the output (Booking Fee)-->
+					<td>
+						<div id="bookingFeeOutput">
+							<!--Second cell containing the output of the booking which is $50 -->
+							-
+						</div>
+					</td>
+				</tr><!--End of the booking fee row-->
+				<tr>
+					<!--Row that contains the output of the insurance fee for the selected for -->
+					<td>Insurance Fee ($20/Day)</td><!--First cell containing the name of the output (insurance fee ($20/day)) -->
+					<td>
+						<div id="insuranceFeeOutput">
+							<!-- Second cell containing the insurance fee for the selected car which is 20 * the number of days the car is rented for-->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the insurance fee row-->
+				<tr>
+					<!-- Row tha contains the output of the total cost of the reservation-->
+					<td>Total Price</td><!--First cell containing the name of the output (total price)-->
+					<td>
+						<div id="totalPriceOutput">
+							<!--Second cell containing the output of the total price -->
+							-
+						</div>
+					</td>
+				</tr><!-- End of the total price row-->
+			</tbody><!--End of the main body of the table-->
+		</table><!-- End of the table-->
+		<br>
+		<!-- Break tags seperating the table from the button container below-->
+		<br>
+		<div class="button_container">
+			<!-- Div tag that will be a container in which the terms and conditions checkbox and the confirm button will sit in-->
+			<label><input class="terms_conditions_button" id="checkButton" title="Check the Terms & Conditions box to proceed" type="checkbox">I agree to the Terms and Conditions</label> <!-- Terms and Conditions checkbox--><br>
+			<div class="errorMessages" id="errorMessageTermsConditions"></div><!--Div tag that will dusplay an error message to alert the user that they must cik the terms and conditions checkbox before confirming their reservation--><br>
+			<br>
+			<button id="confirmButton" title="Button to Confirm Resrvation" type="button">Confirm Reservation</button> <!-- Confirm button that the user can click to confirm their reservation--><br>
+		</div><br>
+		<!--Break tags to create space between the button containers above and the footer below-->
+		<br>
+	</div><!-- End of main_content_2 div -->
+	<footer class="footer">
+		<!--Creating a footer where the companies details and logo will be placed-->
+		<!--Allows for the details and image to be styled on the stylesheet-->
+		<div class="footer__p">
+			<img alt="ricky's_rides_logo" class="footer__img" src="../Images/ricky's_rides_logo_footer.png" title="ricky's_rides_logo"> <!--Placement of the logo-->
+			<p><strong>Ricky's Rides Details:</strong><br>
+			<!-- A pargraph tag containing the information about ricky's rides-->
+			 <!--Information statements-->
+			 Location: 2 Arthur Street, Dunedin<br>
+			Phone Number: 03 4775277<br>
+			Email Address: rickeysrides@gmail.com</p>
+			<hr class="footer_hr">
+			<!-- Produces a horizontal line near the bottom of the footer-->
+		</div>
+	</footer><!--End of footer-->
+	<script src="https://kit.fontawesome.com/b99e675b6e.js">
+	   // Link to a widely used icon set - source for icon images
+	</script> <!-- Overlay displayed when the data has been pushed to firebase -->
+	<div id="confirmOverlay">
+		<!-- Confirm Overlay which is a hidden full page overlay that displays the confirmation of the booking to the users email address (Firebase) once the confirm button is clicked and the data is valid-->
+		<p>Reservation confirmed and has been sent to your email address</p><a href="javascript:void(0)" onclick=" document.getElementById('confirmOverlay').style.height = '0'">&times;</a>
+	</div><!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js">
+	</script> <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	 
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js">
+	   //Connecting to google analytics
+	</script> 
+	<script>
+	                   // Your web app's Firebase configuration
+	                const firebaseConfig = {
+	                  apiKey: "AIzaSyDzERRw0-jkV8Vqk_ZpKX-MY8WJZemqbqE",
+	                authDomain: "ricky-s-rides-2b2b9.firebaseapp.com",
+	                databaseURL: "https://ricky-s-rides-2b2b9-default-rtdb.asia-southeast1.firebasedatabase.app",
+	                projectId: "ricky-s-rides-2b2b9",
+	                storageBucket: "ricky-s-rides-2b2b9.appspot.com",
+	                messagingSenderId: "1001872971336",
+	                appId: "1:1001872971336:web:6816fc559112c6446d6a7d"
+	                };
+	                    // Initialize Firebase
+	                               firebase.initializeApp(firebaseConfig);
+	                               firebase.analytics(); // For google analyitics to work
+	</script> <!--These are the versions of the JS files -->
+	 <!--<script src="ricky's_rides_v1.js"></script>
+    <script src="ricky's_rides_v2.js"></script>
+    <script src="ricky's_rides_v3.js"></script>
+    <script src="ricky's_rides_v4.js"></script>
+    <script src="ricky's_rides_v5.js"></script>
+    <script src="ricky's_rides_v6.js"></script>
+    <script src="ricky's_rides_v7.js"></script>
+    <script src="ricky's_rides_v8.js"></script>
+    <script src="ricky's_rides_v9.js"></script>
+    <script src="ricky's_rides_v10.js"></script>
+    <script src="ricky's_rides_v11.js"></script>
+    <script src="ricky's_rides_v12.js"></script>
+    <script src="ricky's_rides_v13.js"></script>
+    <script src="ricky's_rides_v14.js"></script>-->
+	 <!-- Linking this HTML file to a JS file that will make the GUI inputs function-->
+	 
+	<script src="ricky's_rides_v15.js">
+	</script><!-- End of body tag-->
+	 <!--End of HTML tag-->
+</body>
+</html>

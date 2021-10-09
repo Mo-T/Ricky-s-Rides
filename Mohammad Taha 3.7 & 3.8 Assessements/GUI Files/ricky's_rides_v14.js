@@ -248,16 +248,18 @@ function pushData() {
 		Phone_number: document.getElementById("cellphoneInput").value, //Phone_number will be the name of the field in the database 
 		Email_address: document.getElementById("emailInput").value, //Email_address will be the name of the field in the database 
 		Drivers_License_Number: document.getElementById("driversLicenseInput").value, //Drivers_License_Number will be the name of the field in the database 
-		Selected_Car: carSelected, //Selected_Car will be the name of the field in the database 
 		Check_In_Date: document.getElementById("checkInDate").value, //Check_In_Date will be the name of the field in the database 
 		Number_of_Days: document.getElementById("numberDays").value, //Number_of_Days will be the name of the field in the database 
-		Drop_Off_Location: document.getElementById("dropOffLocationSelect").value, //First_Name will be the name of the field in the database 
+		Drop_Off_Location: document.getElementById("dropOffLocationSelect").value, //Drop_Off_Location will be the name of the field in the database 
 		Pickup_Location: document.getElementById("pickUpLocationSelect").value, //Drop_Off_Location will be the name of the field in the database 
-		Extras: checkedAddExtras, //First_Name will be the name of the field in the database 
-		Extras_Cost: "$" + addCost, //Extras_Cost will be the name of the field in the database 
-		Insurance_Fee: "$" + insuranceFee, //Insurance_Fee will be the name of the field in the database 
-		Booking_Fee: "$" + bookingFee, //Booking_Fee will be the name of the field in the database 
-		Total_Cost: "$" + totalCost //Total_Cost will be the name of the field in the database 
+	    Selected_Car: carSelected, //Selected_Car will be the name of the field in the database 
+		Extras: checkedAddExtras, //Extras will be the name of the field in the database 
+		Total_Car_Cost: "$" + (document.getElementById("numberDays").value * dailyPrice).toFixed(2), //Total_Car_Cost will be the name of the field in the database
+		Daily_Price: "$" + dailyPrice, // Daily_Price will be the name of the field in the database
+		Extras_Cost: "$" + addCost.toFixed(2), //Extras_Cost will be the name of the field in the database 
+		Insurance_Fee: "$" + (insuranceFee * document.getElementById("numberDays").value).toFixed(2), //Insurance_Fee will be the name of the field in the database 
+		Booking_Fee: "$" + bookingFee.toFixed(2), //Booking_Fee will be the name of the field in the database 
+		Total_Cost: "$" + totalCost.toFixed(2) //Total_Cost will be the name of the field in the database 
 	}; //End of the JSON file
 	reservationsRef.push(reservations); //Pushing the JSON file to the database
 	window.scrollTo(0, document.getElementById("bookingInformation").offsetTop - 29);

@@ -56,7 +56,7 @@ nav {
 	width: 100%;
 	height: 450px;
 	background-color: rgb(50, 50, 50);
-	background: url("https://www.teahub.io/photos/full/193-1934905_car-nature-driving.jpg") no-repeat 50% 50% fixed;
+	background: url("../Images/car_nature_parallax_image.png") no-repeat 50% 50% fixed;
 	box-shadow: rgba(50, 50, 93, 0.5) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
 	background-size: cover;
 	overflow: hidden;
@@ -122,11 +122,9 @@ nav {
 	margin-top: 10px;
 	max-width: 100%;
 	border-radius: 50px;
+	border: 2px solid #666666;
 	font-size: 0.95rem;
 	outline: none;
-}
-.comments_title {
-	margin-bottom: 10px;
 }
 /*Controls style and dimensions of the textarea input field*/
 
@@ -135,8 +133,21 @@ textarea {
 	background: transparent;
 	vertical-align: middle;
 	width: 100%;
+	border-radius: 6px;
 	max-width: 100%;
 	font-size: 0.95rem;
+	border: 2px solid #666666;
+	outline: none;
+}
+/*Changes the border of the input and textarea fields once each field is being used/clicked on*/
+
+input:focus, textarea:focus {
+	border: 2px solid #FF7000;
+}
+/*Controls the height of the "comments" label - creates apce bewtween this title and the text field*/
+
+.comments_title {
+	margin-bottom: 10px;
 }
 /*Controls the style of the border of inputs when invalid data is entered/selected */
 
@@ -239,6 +250,7 @@ img {
 
 .card {
 	background-color: #FFFFFF;
+	height: auto;
 	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
@@ -273,7 +285,7 @@ img {
 .card_image {
 	width: 300px;
 	max-width: 100%;
-	height: 215px;
+	height: 220px;
 	cursor: pointer;
 	vertical-align: middle;
 	margin: auto;
@@ -302,7 +314,7 @@ img {
 
 .card_text {
 	color: #ffffff;
-	font-size: 0.875rem;
+	font-size: 14px;
 	line-height: 1.5;
 	margin-bottom: 1.25rem;
 	font-family: 'Lato', sans-serif;
@@ -317,7 +329,7 @@ img {
 table {
 	margin: 0 auto;
 	width: 80%;
-	border: 2px solid #ccc;
+	border: 2px solid #cccccc;
 	border-collapse: collapse;
 	padding: 0;
 	table-layout: fixed;
@@ -326,7 +338,7 @@ table {
 
 table tr {
 	background-color: #F8F8F8;
-	border: 2px solid #dddddd;
+	border: 2px solid rgba(255, 112, 0, 0.4);
 	padding: 0.35em;
 }
 /*Controls the style and appearance of each cell (standard and header) on the summary table*/
@@ -338,12 +350,12 @@ table th, table td {
 /*Controls the style and display of the header cells on the summary table*/
 
 table th {
-	font-size: .85em;
-	background: #dddddd;
-	letter-spacing: .1em;
+	font-size: 17px;
+	background: linear-gradient(to bottom left, #E1A807 40%, #FF7000 100%);
+	letter-spacing: 0.1em;
 	font-weight: bold;
 	text-transform: uppercase;
-	position: sticky;
+	color: #FFFFFF;
 }
 /*Adds a hover effect to each standard cell on the summary table */
 
@@ -391,6 +403,7 @@ table td:hover {
 	display: block;
 	margin: auto;
 	border: 5px solid transparent;
+	background-color: #DFDFDF;
 	position: relative;
 }
 /*Controls the position of the icon on each card*/
@@ -416,38 +429,10 @@ table td:hover {
 	border-color: #FF7000;
 	color: #FF7000;
 }
-/*Controls the border of the top left corner of each card that appears after a card is clicked*/
+/*Allows for the backgriund color of each extra card to become white after being clicked*/
 
-.option_item .option_inner .tickmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: 22px solid;
-	border-color: #000 transparent transparent #000;
-	display: none;
-}
-/*Styles the tick mark that appears on the top left border of each card once they are clicked*/
-
-.option_item .option_inner .tickmark:before {
-	content: "";
-	position: absolute;
-	top: -18px;
-	left: -18px;
-	width: 20px;
-	height: 5px;
-	border: 3px solid;
-	border-color: transparent transparent #fff #fff;
-	transform: rotate(-45deg);
-}
-/*Controls the display of the top left corner border and the tick mark that appears on it*/
-
-.option_item .checkbox:checked~.option_inner .tickmark {
-	display: block;
-}
-/*Styles the background colour of the border that appears on the top left of each card once they are clicked on*/
-
-.option_item .option_inner.extras .tickmark {
-	border-color: #FF7000 transparent transparent #FF7000;
+.option_item .checkbox:checked~.option_inner {
+	background-color: #FFFFFF;
 }
 /*--- END OF EXTRAS CARD STYLE ---*/
 
@@ -534,6 +519,11 @@ table td:hover {
 	margin-right: 0.5rem;
 	outline: none;
 	z-index: 1000;
+}
+/*Removes the borders when the terms and conditions button is clicked on/focused on*/
+
+.terms_conditions_button:focus {
+	border: none;
 }
 /*Adds a hover effect to the terms and conditions button/checkbox that changes the background*/
 
@@ -640,7 +630,6 @@ table td:hover {
 	color: #FFFFFF;
 	padding: 3px 15px;
 	display: block;
-
 	text-align: left;
 	vertical-align: middle;
 }
@@ -728,6 +717,28 @@ table td:hover {
 	/*Controls the font size of the text on the accordions*/
 	.accordion, .accordion:after {
 		text-align: center;
+	}
+	/*Changes the size of the content text on the car cards*/
+	.card_text {
+		font-size: 13px;
+	}
+	/*Changes the size of the titles of the cars on the car cards*/
+	.card_title {
+		font-size: 19px;
+	}
+}
+/* Responsive columns */
+
+/*Controls the view of view of the GUI and certain elements' placement and/or effects on screens that have a minimum width of 895 px and up to a maximum width of 1000px*/
+
+@media screen and (min-width: 895px) and (max-width: 1000px) {
+	/*Changes the size of the titles of the cars on the car cards*/
+	.card_title {
+		font-size: 20px;
+	}
+	/*Changes the size of the content text on the car cards*/
+	.card_text {
+		font-size: 12px;
 	}
 }
 /* Responsive columns */
